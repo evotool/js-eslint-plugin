@@ -20,7 +20,7 @@ export default {
 
 		'arrow-parens': ['error', 'always'],
 		'curly': ['error'],
-		'dot-notation': 'error',
+		'default-param-last': 'error',
 		'eol-last': 'error',
 		'eqeqeq': ['error', 'smart'],
 		'guard-for-in': 'error',
@@ -35,6 +35,7 @@ export default {
 		'no-new-wrappers': 'error',
 		'no-restricted-imports': 'error',
 		'no-restricted-syntax': ['error', 'WithStatement'],
+		'no-return-await': 'error',
 		'no-undef-init': 'error',
 		'no-unneeded-ternary': 'error',
 		'no-var': 'error',
@@ -46,7 +47,6 @@ export default {
 		'radix': 'error',
 		'symbol-description': 'error',
 		'unicode-bom': ['error', 'never'],
-		'no-return-await': 'error',
 
 		'array-bracket-newline': 'warn',
 		'array-bracket-spacing': ['warn', 'never'],
@@ -77,21 +77,8 @@ export default {
 		'keyword-spacing': 'warn',
 		'lines-around-comment': ['warn', { allowBlockStart: true }],
 		'lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: true }],
-		'max-len': [
-			'warn',
-			{
-				code: 140,
-				tabWidth: 2,
-				ignoreComments: true,
-				ignoreStrings: true,
-				ignoreRegExpLiterals: true,
-				ignoreTrailingComments: true,
-				ignoreTemplateLiterals: true,
-			},
-		],
 		'max-statements-per-line': 'warn',
 		'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 2 }],
-		'no-confusing-arrow': 'warn',
 		'no-invalid-this': 'warn',
 		'no-lonely-if': 'warn',
 		'no-mixed-operators': 'warn',
@@ -172,7 +159,10 @@ export default {
 
 		'array-element-newline': ['off', { multiline: true, minItems: 1 }],
 		'camelcase': ['off', { properties: 'never' }],
+		'dot-notation': 'off',
+		'max-len': 'off',
 		'no-cond-assign': 'off',
+		'no-confusing-arrow': 'off',
 		'no-dupe-class-members': 'off',
 		'no-empty': 'off',
 		'no-shadow': ['off', { hoist: 'functions' }],
@@ -185,7 +175,7 @@ export default {
 				const: 'never',
 			},
 		],
-		'quote-props': ['off', 'consistent-as-needed'],
+		'quote-props': 'off',
 		'require-jsdoc': [
 			'off',
 			{
