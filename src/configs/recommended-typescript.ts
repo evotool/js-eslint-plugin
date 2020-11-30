@@ -40,7 +40,6 @@ export default {
 		'@typescript-eslint/comma-dangle': ['warn', 'always-multiline'],
 		'@typescript-eslint/comma-spacing': 'warn',
 		'@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }],
-		'@typescript-eslint/explicit-module-boundary-types': ['warn', { allowDirectConstAssertionInArrowFunctions: true }],
 		'@typescript-eslint/func-call-spacing': 'warn',
 		'@typescript-eslint/indent': [
 			'warn',
@@ -92,6 +91,7 @@ export default {
 			},
 		],
 
+		'@typescript-eslint/explicit-module-boundary-types': 'off',
 		'@typescript-eslint/no-empty-function': 'off',
 		'@typescript-eslint/no-empty-interface': 'off',
 		'@typescript-eslint/no-explicit-any': 'off',
