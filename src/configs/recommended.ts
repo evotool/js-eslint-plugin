@@ -78,7 +78,6 @@ export default {
 		'lines-around-comment': ['warn', { allowBlockStart: true }],
 		'lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: true }],
 		'max-statements-per-line': 'warn',
-		'newline-per-chained-call': ['warn', { ignoreChainWithDepth: 2 }],
 		'no-invalid-this': 'warn',
 		'no-lonely-if': 'warn',
 		'no-mixed-operators': 'warn',
@@ -157,6 +156,7 @@ export default {
 		'wrap-regex': 'warn',
 		'yield-star-spacing': ['warn', 'after'],
 
+		'newline-per-chained-call': 'off',
 		'array-element-newline': ['off', { multiline: true, minItems: 1 }],
 		'camelcase': ['off', { properties: 'never' }],
 		'dot-notation': 'off',
