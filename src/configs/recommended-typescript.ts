@@ -30,7 +30,8 @@ export default {
 		'@typescript-eslint/ban-types': [
 			'warn',
 			{
-				types: { Function: { message: 'Avoid the Function type', fixWith: 'new (...args: any[]) => any' } },
+				types: {
+				},
 				extendDefaults: false,
 			},
 		],
