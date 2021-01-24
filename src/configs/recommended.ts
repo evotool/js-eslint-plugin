@@ -91,6 +91,7 @@ export default {
 		'no-throw-literal': 'warn',
 		'no-trailing-spaces': 'warn',
 		'no-unused-vars': ['warn', { args: 'none' }],
+		'no-use-before-define': 'warn',
 		'no-useless-computed-key': 'warn',
 		'no-useless-rename': 'warn',
 		'no-whitespace-before-property': 'warn',
