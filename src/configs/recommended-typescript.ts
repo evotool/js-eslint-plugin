@@ -55,7 +55,7 @@ export default {
 		'@typescript-eslint/member-ordering': [
 			'warn',
 			{
-				default: ['static-field', 'static-method', 'abstract-field', 'abstract-method', 'instance-field', 'constructor', 'instance-method'],
+				default: ['abstract-field', 'abstract-method', 'static-field', 'instance-field', 'constructor', 'instance-method', 'static-method'],
 			},
 		],
 		'@typescript-eslint/method-signature-style': ['warn', 'method'],
@@ -75,6 +75,7 @@ export default {
 		'@typescript-eslint/no-unused-vars': ['warn', { args: 'none', caughtErrors: 'none', ignoreRestSiblings: true }],
 		'@typescript-eslint/no-use-before-define': 'warn',
 		'@typescript-eslint/prefer-readonly': 'warn',
+		'@typescript-eslint/require-await': 'warn',
 		'@typescript-eslint/restrict-plus-operands': ['warn', { checkCompoundAssignments: true }],
 		'@typescript-eslint/space-before-function-paren': ['warn', { asyncArrow: 'always', anonymous: 'always',  named: 'never' }],
 		'@typescript-eslint/space-infix-ops': 'warn',
