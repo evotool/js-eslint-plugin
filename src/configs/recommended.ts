@@ -20,7 +20,6 @@ export default {
 
 		'arrow-parens': ['error', 'always'],
 		'curly': ['error'],
-		'default-param-last': 'error',
 		'eol-last': 'error',
 		'eqeqeq': ['error', 'smart'],
 		'guard-for-in': 'error',
@@ -157,11 +156,12 @@ export default {
 		'wrap-regex': 'warn',
 		'yield-star-spacing': ['warn', 'after'],
 
-		'newline-per-chained-call': 'off',
 		'array-element-newline': ['off', { multiline: true, minItems: 1 }],
 		'camelcase': ['off', { properties: 'never' }],
+		'default-param-last': 'off',
 		'dot-notation': 'off',
 		'max-len': 'off',
+		'newline-per-chained-call': 'off',
 		'no-cond-assign': 'off',
 		'no-confusing-arrow': 'off',
 		'no-dupe-class-members': 'off',

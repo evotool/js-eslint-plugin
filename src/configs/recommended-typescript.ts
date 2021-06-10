@@ -13,7 +13,6 @@ export default {
 		'@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': false }],
 		'@typescript-eslint/consistent-type-assertions': 'error',
 		'@typescript-eslint/consistent-type-definitions': 'error',
-		'@typescript-eslint/default-param-last': 'error',
 		'@typescript-eslint/no-dupe-class-members': 'error',
 		'@typescript-eslint/no-duplicate-imports': 'error',
 		'@typescript-eslint/no-inferrable-types': ['error', { ignoreProperties: true, ignoreParameters: true }],
@@ -92,6 +91,7 @@ export default {
 			},
 		],
 
+		'@typescript-eslint/default-param-last': 'off',
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
 		'@typescript-eslint/no-empty-function': 'off',
 		'@typescript-eslint/no-empty-interface': 'off',
