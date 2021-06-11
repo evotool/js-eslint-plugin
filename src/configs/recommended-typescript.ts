@@ -38,7 +38,6 @@ export default {
 		'@typescript-eslint/class-literal-property-style': 'warn',
 		'@typescript-eslint/comma-dangle': ['warn', 'always-multiline'],
 		'@typescript-eslint/comma-spacing': 'warn',
-		'@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }],
 		'@typescript-eslint/func-call-spacing': 'warn',
 		'@typescript-eslint/indent': [
 			'warn',
@@ -92,6 +91,7 @@ export default {
 		],
 
 		'@typescript-eslint/default-param-last': 'off',
+		'@typescript-eslint/explicit-function-return-type': ['off', { allowExpressions: true }],
 		'@typescript-eslint/explicit-module-boundary-types': 'off',
 		'@typescript-eslint/no-empty-function': 'off',
 		'@typescript-eslint/no-empty-interface': 'off',
