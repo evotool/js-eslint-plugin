@@ -98,7 +98,7 @@ export default {
     '@typescript-eslint/no-extraneous-class': 'error',
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
-    '@typescript-eslint/no-implicit-any-catch': ['warn', { allowExplicitAny: true }],
+    '@typescript-eslint/no-implicit-any-catch': ['off', { allowExplicitAny: true }], // TS1196
     '@typescript-eslint/no-implied-eval': 'error',
     'no-implied-eval': 'off',
     '@typescript-eslint/no-inferrable-types': ['error', { ignoreProperties: true, ignoreParameters: true }],
