@@ -22,7 +22,7 @@ export default {
     'accessor-pairs': 'error',
     'array-bracket-newline': 'warn',
     'array-bracket-spacing': ['warn', 'never'],
-    'array-callback-return': ['warn', { allowImplocit: true, checkForEach: true }],
+    'array-callback-return': ['warn', { allowImplicit: true, checkForEach: true }],
     'array-element-newline': ['off', { multiline: true, minItems: 1 }],
     'arrow-body-style': 'warn',
     'arrow-parens': ['error', 'always'],
