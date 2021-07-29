@@ -137,7 +137,7 @@ export default {
     'no-throw-literal': 'off',
     '@typescript-eslint/no-type-alias': 'off',
     '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
-    '@typescript-eslint/no-unnecessary-condition': 'warn',
+    '@typescript-eslint/no-unnecessary-condition': 'off',
     '@typescript-eslint/no-unnecessary-qualifier': 'warn',
     '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
     '@typescript-eslint/no-unnecessary-type-assertion': 'error', // !
