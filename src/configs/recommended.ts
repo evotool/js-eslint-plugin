@@ -64,7 +64,7 @@ export default {
     'id-match': 'off',
     'implicit-arrow-linebreak': ['warn', 'beside'],
     'indent': ['warn', 2, { SwitchCase: 1, FunctionDeclaration: { parameters: 'first' }, FunctionExpression: { parameters: 'first' } }],
-    'init-declarations': ['warn', 'never', { ignoreForLoopInit: true }],
+    'init-declarations': ['off', 'never', { ignoreForLoopInit: true }],
     'jsx-quotes': 'warn',
     'key-spacing': 'warn',
     'keyword-spacing': 'warn',

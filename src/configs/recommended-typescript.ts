@@ -55,7 +55,7 @@ export default {
       { SwitchCase: 1, FunctionDeclaration: { parameters: 'first' }, FunctionExpression: { parameters: 'first' } },
     ],
     'indent': 'off',
-    '@typescript-eslint/init-declarations': ['warn', 'never', { ignoreForLoopInit: true }],
+    '@typescript-eslint/init-declarations': ['off', 'never', { ignoreForLoopInit: true }],
     'init-declarations': 'off',
     '@typescript-eslint/keyword-spacing': 'warn',
     'keyword-spacing': 'off',
