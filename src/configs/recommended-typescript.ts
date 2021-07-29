@@ -25,7 +25,6 @@ export default {
     '@typescript-eslint/dot-notation': [
       'warn',
       {
-        allowKeywords: false,
         allowPrivateClassPropertyAccess: false,
         allowProtectedClassPropertyAccess: false,
         allowIndexSignaturePropertyAccess: false,
@@ -36,14 +35,14 @@ export default {
     '@typescript-eslint/explicit-member-accessibility': [
       'warn',
       {
-        accessibility: 'explicit',
-        overrides: {
-          accessors: 'explicit',
-          constructors: 'no-public',
-          methods: 'explicit',
-          properties: 'off',
-          parameterProperties: 'explicit',
-        },
+				accessibility: 'no-public',
+				overrides: {
+					accessors: 'no-public',
+					constructors: 'no-public',
+					methods: 'no-public',
+					properties: 'no-public',
+					parameterProperties: 'no-public',
+				},
       },
     ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -131,7 +130,7 @@ export default {
     '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
     '@typescript-eslint/no-unnecessary-type-assertion': 'error', // !
     '@typescript-eslint/no-unnecessary-type-constraint': 'error',
-    '@typescript-eslint/no-unsafe-argument': 'error',
+    '@typescript-eslint/no-unsafe-argument': 'off',
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-unsafe-call': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
@@ -143,6 +142,7 @@ export default {
     '@typescript-eslint/no-use-before-define': 'warn',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-useless-constructor': 'error',
+    'no-useless-constructor': 'off',
     '@typescript-eslint/no-var-requires': 'error', // !
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
     '@typescript-eslint/object-curly-spacing': ['warn', 'always'],

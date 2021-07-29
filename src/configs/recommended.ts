@@ -45,7 +45,7 @@ export default {
     'default-case-last': 'warn',
     'default-case': 'warn',
     'default-param-last': 'off',
-    'dot-notation': ['warn', { allowKeywords: false }],
+    'dot-notation': 'warn',
     'eol-last': 'error',
     'eqeqeq': ['error', 'smart'],
     'for-direction': 'error',
