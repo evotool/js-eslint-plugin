@@ -104,7 +104,7 @@ export default {
     '@typescript-eslint/no-invalid-this': 'warn',
     'no-invalid-this': 'off',
     '@typescript-eslint/no-invalid-void-type': 'error',
-    '@typescript-eslint/no-loop-func': 'error',
+    '@typescript-eslint/no-loop-func': 'off',
     'no-loop-func': 'off',
     '@typescript-eslint/no-loss-of-precision': 'error',
     'no-loss-of-precision': 'off',

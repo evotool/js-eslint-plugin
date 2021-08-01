@@ -148,7 +148,7 @@ export default {
     'no-labels': 'error',
     'no-lone-blocks': 'error',
     'no-lonely-if': 'warn',
-    'no-loop-func': 'error',
+    'no-loop-func': 'off',
     'no-loss-of-precision': 'error',
     'no-magic-numbers': 'off',
     'no-misleading-character-class': 'error',
