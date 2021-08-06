@@ -1,48 +1,48 @@
 {
-	"name": "@evojs/eslint-plugin",
-	"version": "1.5.7",
-	"description": "Plugin for eslint",
-	"main": "index.js",
-	"license": "MIT",
-	"scripts": {
-		"prebuild": "rm -rf dist/",
-		"build": "tsc --build tsconfig.build.json && node tools/build.js",
-		"prepublishOnly": "npm run build && node tools/prepublish.js",
-		"release": "RELEASE_MODE=1 npm run prepublishOnly && npm publish --access public dist/",
-		"lint": "eslint \"src/**/*.ts\" -f codeframe"
-	},
-	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^4.28.5",
-		"@typescript-eslint/parser": "^4.28.5",
-		"eslint-plugin-import": "^2.23.4"
-	},
-	"devDependencies": {
-		"eslint": "^7.32.0",
-		"glob": "^7.1.7",
-		"typescript": "^4.3.5"
-	},
-	"peerDependencies": {
-		"typescript": ">=4.0.0",
-		"eslint": ">=7.0.0"
-	},
-	"engines": {
-		"node": "^10.12.0 || >=12.0.0"
-	},
-	"author": {
-		"name": "Shamil Sultanov",
-		"email": "shamil.amirovich@gmail.com"
-	},
-	"keywords": [
-		"evojs",
-		"eslint",
-		"plugin"
-	],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/evotool/js-eslint-plugin.git"
-	},
-	"bugs": {
-		"url": "https://github.com/evotool/js-eslint-plugin/issues"
-	},
-	"homepage": "https://github.com/evotool/js-eslint-plugin#readme"
+  "name": "@evojs/eslint-plugin",
+  "version": "1.5.8",
+  "description": "Plugin for eslint",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rm -rf dist/",
+    "build": "tsc --build tsconfig.build.json && node tools/build.js",
+    "prepublishOnly": "npm run build && node tools/prepublish.js",
+    "release": "RELEASE_MODE=1 npm run prepublishOnly && npm publish --access public dist/",
+    "lint": "eslint \"src/**/*.ts\" -f codeframe"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint-plugin-import": "^2.23.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "glob": "^7.1.7",
+    "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.0.0",
+    "eslint": ">=7.0.0"
+  },
+  "engines": {
+    "node": "^10.12.0 || >=12.0.0"
+  },
+  "author": {
+    "name": "Shamil Sultanov",
+    "email": "shamil.amirovich@gmail.com"
+  },
+  "keywords": [
+    "evojs",
+    "eslint",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evotool/js-eslint-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evotool/js-eslint-plugin/issues"
+  },
+  "homepage": "https://github.com/evotool/js-eslint-plugin#readme"
 }

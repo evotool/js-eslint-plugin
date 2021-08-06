@@ -35,14 +35,14 @@ export default {
     '@typescript-eslint/explicit-member-accessibility': [
       'warn',
       {
-				accessibility: 'no-public',
-				overrides: {
-					accessors: 'no-public',
-					constructors: 'no-public',
-					methods: 'no-public',
-					properties: 'no-public',
-					parameterProperties: 'no-public',
-				},
+        accessibility: 'no-public',
+        overrides: {
+          accessors: 'no-public',
+          constructors: 'no-public',
+          methods: 'no-public',
+          properties: 'no-public',
+          parameterProperties: 'no-public',
+        },
       },
     ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
