@@ -94,7 +94,7 @@ export default {
     'no-extra-parens': 'off',
     '@typescript-eslint/no-extra-semi': 'error',
     'no-extra-semi': 'off',
-    '@typescript-eslint/no-extraneous-class': 'error',
+    '@typescript-eslint/no-extraneous-class': 'off',
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/no-implicit-any-catch': ['off', { allowExplicitAny: true }], // TS1196
