@@ -62,7 +62,7 @@ export default {
     'id-denylist': 'off',
     'id-length': 'off',
     'id-match': 'off',
-    'implicit-arrow-linebreak': ['warn', 'beside'],
+    'implicit-arrow-linebreak': ['off', 'beside'],
     'indent': ['warn', 2, { SwitchCase: 1, FunctionDeclaration: { parameters: 'first' }, FunctionExpression: { parameters: 'first' } }],
     'init-declarations': ['off', 'never', { ignoreForLoopInit: true }],
     'jsx-quotes': 'warn',
