@@ -1,6 +1,6 @@
 {
   "name": "@evojs/eslint-plugin",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Plugin for eslint",
   "main": "index.js",
   "license": "MIT",
@@ -12,12 +12,12 @@
     "lint": "eslint \"src/**/*.ts\" -f codeframe"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
     "eslint-plugin-import": "^2.25.3"
   },
   "devDependencies": {
-    "eslint": "^8.3.0",
+    "eslint": "^8.4.0",
     "glob": "^7.2.0",
     "typescript": "^4.5.2"
   },
