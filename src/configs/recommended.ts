@@ -18,7 +18,6 @@ export default {
       },
     ],
 
-    'dot-location': ['error', 'property'],
     'accessor-pairs': 'error',
     'array-bracket-newline': ['warn', { multiline: true }],
     'array-bracket-spacing': ['warn', 'never'],
@@ -45,6 +44,7 @@ export default {
     'default-case-last': 'warn',
     'default-case': 'warn',
     'default-param-last': 'off',
+    'dot-location': ['error', 'property'],
     'dot-notation': 'warn',
     'eol-last': 'error',
     'eqeqeq': ['error', 'smart'],
