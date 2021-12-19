@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import recommended from './configs/recommended';
 import recommended_typescript from './configs/recommended-typescript';
 

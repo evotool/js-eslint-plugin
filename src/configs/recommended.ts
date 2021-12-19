@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default {
   plugins: ['import'],
   extends: ['plugin:import/recommended'],
@@ -19,9 +21,20 @@ export default {
     ],
 
     'accessor-pairs': 'error',
-    'array-bracket-newline': ['warn', { multiline: true }],
+    'array-bracket-newline': [
+      'warn',
+      {
+        multiline: true,
+      },
+    ],
     'array-bracket-spacing': ['warn', 'never'],
-    'array-callback-return': ['warn', { allowImplicit: true, checkForEach: true }],
+    'array-callback-return': [
+      'warn',
+      {
+        allowImplicit: true,
+        checkForEach: true,
+      },
+    ],
     'array-element-newline': ['warn', 'consistent'],
     'arrow-body-style': 'warn',
     'arrow-parens': ['error', 'always'],
@@ -63,15 +76,40 @@ export default {
     'id-length': 'off',
     'id-match': 'off',
     'implicit-arrow-linebreak': ['off', 'beside'],
-    'indent': ['warn', 2, { SwitchCase: 1, FunctionDeclaration: { parameters: 'first' }, FunctionExpression: { parameters: 'first' } }],
-    'init-declarations': ['off', 'never', { ignoreForLoopInit: true }],
+    'indent': [
+      'warn',
+      2,
+      {
+        SwitchCase: 1,
+        FunctionDeclaration: { parameters: 'first' },
+        FunctionExpression: { parameters: 'first' },
+      },
+    ],
+    'init-declarations': [
+      'off',
+      'never',
+      {
+        ignoreForLoopInit: true,
+      },
+    ],
     'jsx-quotes': 'warn',
     'key-spacing': 'warn',
     'keyword-spacing': 'warn',
     'line-comment-position': 'off',
     'linebreak-style': ['error', 'unix'],
-    'lines-around-comment': ['warn', { allowBlockStart: true }],
-    'lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: true }],
+    'lines-around-comment': [
+      'warn',
+      {
+        allowBlockStart: true,
+      },
+    ],
+    'lines-between-class-members': [
+      'warn',
+      'always',
+      {
+        exceptAfterSingleLine: true,
+      },
+    ],
     'max-classes-per-file': 'off',
     'max-depth': 'off',
     'max-len': 'off',
@@ -127,7 +165,12 @@ export default {
     'no-extra-parens': [
       'warn',
       'all',
-      { returnAssign: false, nestedBinaryExpressions: false, enforceForSequenceExpressions: false, ignoreJSX: 'multi-line' },
+      {
+        returnAssign: false,
+        nestedBinaryExpressions: false,
+        enforceForSequenceExpressions: false,
+        ignoreJSX: 'multi-line',
+      },
     ],
     'no-extra-semi': 'error',
     'no-fallthrough': 'error',
@@ -157,7 +200,13 @@ export default {
     'no-multi-assign': 'warn',
     'no-multi-spaces': 'warn',
     'no-multi-str': 'warn',
-    'no-multiple-empty-lines': ['warn', { max: 1, maxEOF: 0 }],
+    'no-multiple-empty-lines': [
+      'warn',
+      {
+        max: 1,
+        maxEOF: 0,
+      },
+    ],
     'no-negated-condition': 'warn',
     'no-nested-ternary': 'off',
     'no-new-func': 'error',
@@ -189,9 +238,19 @@ export default {
     'no-sequences': 'error',
     'no-setter-return': 'error',
     'no-shadow-restricted-names': 'error',
-    'no-shadow': ['off', { hoist: 'functions' }],
+    'no-shadow': [
+      'off',
+      {
+        hoist: 'functions',
+      },
+    ],
     'no-sparse-arrays': 'error',
-    'no-tabs': ['warn', { allowIndentationTabs: true }],
+    'no-tabs': [
+      'warn',
+      {
+        allowIndentationTabs: true,
+      },
+    ],
     'no-template-curly-in-string': 'warn',
     'no-ternary': 'off',
     'no-this-before-super': 'error',
@@ -209,9 +268,22 @@ export default {
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
     'no-unsafe-optional-chaining': 'error',
-    'no-unused-expressions': ['error', { allowTernary: true, allowShortCircuit: true }],
+    'no-unused-expressions': [
+      'error',
+      {
+        allowTernary: true,
+        allowShortCircuit: true,
+      },
+    ],
     'no-unused-labels': 'error',
-    'no-unused-vars': ['warn', { args: 'none', caughtErrors: 'none', ignoreRestSiblings: true }],
+    'no-unused-vars': [
+      'warn',
+      {
+        args: 'none',
+        caughtErrors: 'none',
+        ignoreRestSiblings: true,
+      },
+    ],
     'no-use-before-define': 'warn',
     'no-useless-backreference': 'error',
     'no-useless-call': 'error',
@@ -246,17 +318,35 @@ export default {
     'padded-blocks': ['warn', 'never'],
     'padding-line-between-statements': [
       'warn',
-      { blankLine: 'always', prev: 'block-like', next: '*' },
+      {
+        blankLine: 'always',
+        prev: 'block-like',
+        next: '*',
+      },
       {
         blankLine: 'always',
         prev: '*',
         next: ['const', 'let', 'do', 'switch', 'try', 'class', 'function', 'while', 'for', 'if', 'continue', 'break', 'throw', 'return'],
       },
-      { blankLine: 'any', prev: ['const', 'let'], next: ['const', 'let'] },
+      {
+        blankLine: 'any',
+        prev: ['const', 'let'],
+        next: ['const', 'let'],
+      },
     ],
     'prefer-arrow-callback': 'warn',
-    'prefer-const': ['error', { destructuring: 'all' }],
-    'prefer-destructuring': ['error', { AssignmentExpression: { array: false, object: false } }],
+    'prefer-const': [
+      'error',
+      {
+        destructuring: 'all',
+      },
+    ],
+    'prefer-destructuring': [
+      'error',
+      {
+        AssignmentExpression: { array: false, object: false },
+      },
+    ],
     'prefer-exponentiation-operator': 'error',
     'prefer-named-capture-group': 'off',
     'prefer-numeric-literals': 'warn',
@@ -267,7 +357,13 @@ export default {
     'prefer-spread': 'error',
     'prefer-template': 'warn',
     'quote-props': 'off',
-    'quotes': ['warn', 'single', { allowTemplateLiterals: true }],
+    'quotes': [
+      'warn',
+      'single',
+      {
+        allowTemplateLiterals: true,
+      },
+    ],
     'radix': 'error',
     'require-atomic-updates': 'off',
     'require-await': 'warn',
@@ -277,11 +373,24 @@ export default {
     'semi-spacing': 'warn',
     'semi-style': 'warn',
     'semi': ['error', 'always'],
-    'sort-imports': ['warn', { ignoreDeclarationSort: true, ignoreMemberSort: false }],
+    'sort-imports': [
+      'warn',
+      {
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false,
+      },
+    ],
     'sort-keys': 'off',
     'sort-vars': 'off',
     'space-before-blocks': 'warn',
-    'space-before-function-paren': ['warn', { asyncArrow: 'always', anonymous: 'always', named: 'never' }],
+    'space-before-function-paren': [
+      'warn',
+      {
+        asyncArrow: 'always',
+        anonymous: 'always',
+        named: 'never',
+      },
+    ],
     'space-in-parens': ['warn', 'never'],
     'space-infix-ops': 'warn',
     'space-unary-ops': 'warn',
@@ -295,7 +404,13 @@ export default {
     'use-isnan': 'error',
     'valid-typeof': 'error',
     'vars-on-top': 'off',
-    'wrap-iife': ['warn', 'inside', { functionPrototypeMethods: true }],
+    'wrap-iife': [
+      'warn',
+      'inside',
+      {
+        functionPrototypeMethods: true,
+      },
+    ],
     'wrap-regex': 'warn',
     'yield-star-spacing': ['warn', 'after'],
     'yoda': ['error', 'never'],

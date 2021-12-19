@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export default {
   parser: '@typescript-eslint/parser',
   parserOptions: { sourceType: 'module' },
@@ -8,7 +10,13 @@ export default {
     '@typescript-eslint/array-type': 'error',
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': false }],
-    '@typescript-eslint/ban-types': ['warn', { types: {}, extendDefaults: false }],
+    '@typescript-eslint/ban-types': [
+      'warn',
+      {
+        types: {},
+        extendDefaults: false,
+      },
+    ],
     '@typescript-eslint/brace-style': ['warn', '1tbs'],
     'brace-style': 'off',
     '@typescript-eslint/class-literal-property-style': 'warn',
@@ -19,7 +27,13 @@ export default {
     '@typescript-eslint/consistent-indexed-object-style': ['off', 'record'],
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': 'error',
-    '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports', disallowTypeAnnotations: true }],
+    '@typescript-eslint/consistent-type-imports': [
+      'warn',
+      {
+        prefer: 'type-imports',
+        disallowTypeAnnotations: true,
+      },
+    ],
     '@typescript-eslint/default-param-last': 'off',
     'default-param-last': 'off',
     '@typescript-eslint/dot-notation': [
@@ -31,7 +45,12 @@ export default {
       },
     ],
     'dot-notation': 'off',
-    '@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }],
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+      },
+    ],
     '@typescript-eslint/explicit-member-accessibility': [
       'warn',
       {
@@ -48,21 +67,46 @@ export default {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/func-call-spacing': 'warn',
     'func-call-spacing': 'off',
+
     '@typescript-eslint/indent': [
       'warn',
       2,
-      { SwitchCase: 1, FunctionDeclaration: { parameters: 'first' }, FunctionExpression: { parameters: 'first' } },
+      {
+        SwitchCase: 1,
+        FunctionDeclaration: { parameters: 'first' },
+        FunctionExpression: { parameters: 'first' },
+        ignoredNodes: [
+          'FunctionExpression > .params[decorators.length > 0]',
+          'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
+          'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key',
+        ],
+      },
     ],
     'indent': 'off',
-    '@typescript-eslint/init-declarations': ['off', 'never', { ignoreForLoopInit: true }],
+    '@typescript-eslint/init-declarations': [
+      'off',
+      'never',
+      {
+        ignoreForLoopInit: true,
+      },
+    ],
     'init-declarations': 'off',
     '@typescript-eslint/keyword-spacing': 'warn',
     'keyword-spacing': 'off',
-    '@typescript-eslint/lines-between-class-members': ['warn', 'always', { exceptAfterSingleLine: true }],
+    '@typescript-eslint/lines-between-class-members': [
+      'warn',
+      'always',
+      {
+        exceptAfterSingleLine: true,
+      },
+    ],
     'lines-between-class-members': 'off',
     '@typescript-eslint/member-delimiter-style': [
       'warn',
-      { multiline: { delimiter: 'semi', requireLast: true }, singleline: { delimiter: 'semi', requireLast: false } },
+      {
+        multiline: { delimiter: 'semi', requireLast: true },
+        singleline: { delimiter: 'semi', requireLast: false },
+      },
     ],
     '@typescript-eslint/member-ordering': [
       'warn',
@@ -89,7 +133,12 @@ export default {
     '@typescript-eslint/no-extra-parens': [
       'warn',
       'all',
-      { returnAssign: false, nestedBinaryExpressions: false, enforceForSequenceExpressions: false, ignoreJSX: 'multi-line' },
+      {
+        returnAssign: false,
+        nestedBinaryExpressions: false,
+        enforceForSequenceExpressions: false,
+        ignoreJSX: 'multi-line',
+      },
     ],
     'no-extra-parens': 'off',
     '@typescript-eslint/no-extra-semi': 'error',
@@ -97,10 +146,21 @@ export default {
     '@typescript-eslint/no-extraneous-class': 'off',
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
-    '@typescript-eslint/no-implicit-any-catch': ['off', { allowExplicitAny: true }], // TS1196
+    '@typescript-eslint/no-implicit-any-catch': [
+      'off',
+      {
+        allowExplicitAny: true,
+      },
+    ], // TS1196
     '@typescript-eslint/no-implied-eval': 'error',
     'no-implied-eval': 'off',
-    '@typescript-eslint/no-inferrable-types': ['error', { ignoreProperties: true, ignoreParameters: true }],
+    '@typescript-eslint/no-inferrable-types': [
+      'error',
+      {
+        ignoreProperties: true,
+        ignoreParameters: true,
+      },
+    ],
     '@typescript-eslint/no-invalid-this': 'warn',
     'no-invalid-this': 'off',
     '@typescript-eslint/no-invalid-void-type': 'error',
@@ -111,7 +171,13 @@ export default {
     '@typescript-eslint/no-magic-numbers': 'off',
     'no-magic-numbers': 'off',
     '@typescript-eslint/no-misused-new': 'error',
-    '@typescript-eslint/no-misused-promises': ['error', { checksConditionals: true, checksVoidReturn: true }],
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      {
+        checksConditionals: true,
+        checksVoidReturn: true,
+      },
+    ],
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
     '@typescript-eslint/no-non-null-assertion': 'off',
@@ -135,10 +201,23 @@ export default {
     '@typescript-eslint/no-unsafe-call': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/no-unsafe-return': 'error', // !
-    '@typescript-eslint/no-unused-expressions': ['error', { allowTernary: true, allowShortCircuit: true }],
+    '@typescript-eslint/no-unused-expressions': [
+      'error',
+      {
+        allowTernary: true,
+        allowShortCircuit: true,
+      },
+    ],
     'no-unused-expressions': 'off',
     '@typescript-eslint/no-unused-vars-experimental': 'off',
-    '@typescript-eslint/no-unused-vars': ['warn', { args: 'none', caughtErrors: 'none', ignoreRestSiblings: true }],
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        args: 'none',
+        caughtErrors: 'none',
+        ignoreRestSiblings: true,
+      },
+    ],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-use-before-define': 'warn',
     'no-use-before-define': 'off',
@@ -164,17 +243,36 @@ export default {
     '@typescript-eslint/prefer-string-starts-ends-with': 'error',
     '@typescript-eslint/prefer-ts-expect-error': 'off',
     '@typescript-eslint/promise-function-async': 'off',
-    '@typescript-eslint/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+    '@typescript-eslint/quotes': [
+      'error',
+      'single',
+      {
+        avoidEscape: true,
+        allowTemplateLiterals: true,
+      },
+    ],
     '@typescript-eslint/require-array-sort-compare': 'off',
     '@typescript-eslint/require-await': 'warn',
     'require-await': 'off',
-    '@typescript-eslint/restrict-plus-operands': ['warn', { checkCompoundAssignments: true }],
+    '@typescript-eslint/restrict-plus-operands': [
+      'warn',
+      {
+        checkCompoundAssignments: true,
+      },
+    ],
     '@typescript-eslint/restrict-template-expressions': 'off',
     '@typescript-eslint/return-await': 'error',
     '@typescript-eslint/semi': ['error', 'always'],
     'semi': 'off',
     '@typescript-eslint/sort-type-union-intersection-members': 'off',
-    '@typescript-eslint/space-before-function-paren': ['warn', { asyncArrow: 'always', anonymous: 'always', named: 'never' }],
+    '@typescript-eslint/space-before-function-paren': [
+      'warn',
+      {
+        asyncArrow: 'always',
+        anonymous: 'always',
+        named: 'never',
+      },
+    ],
     'space-before-function-paren': 'off',
     '@typescript-eslint/space-infix-ops': 'warn',
     'space-infix-ops': 'off',
