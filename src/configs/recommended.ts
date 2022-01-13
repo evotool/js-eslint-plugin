@@ -326,17 +326,12 @@ export default {
       {
         blankLine: 'always',
         prev: '*',
-        next: ['const', 'let', 'do', 'await', 'switch', 'try', 'class', 'function', 'while', 'for', 'if', 'continue', 'break', 'throw', 'return'],
+        next: ['const', 'let', 'do', 'switch', 'try', 'class', 'function', 'while', 'for', 'if', 'continue', 'break', 'throw', 'return'],
       },
       {
         blankLine: 'any',
         prev: ['const', 'let'],
         next: ['const', 'let'],
-      },
-      {
-        blankLine: 'any',
-        prev: ['await'],
-        next: ['await'],
       },
     ],
     'prefer-arrow-callback': 'warn',
