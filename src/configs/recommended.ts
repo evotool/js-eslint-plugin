@@ -4,6 +4,7 @@ export default {
   plugins: ['import', 'unused-imports'],
   extends: ['plugin:import/recommended'],
   rules: {
+    'unused-imports/no-unused-imports': 'error',
     'import/no-deprecated': 'error',
     'import/no-extraneous-dependencies': 'error',
     'import/no-unused-modules': 'error',
