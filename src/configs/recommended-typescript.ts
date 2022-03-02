@@ -221,7 +221,7 @@ export default {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-use-before-define': 'warn',
     'no-use-before-define': 'off',
-    '@typescript-eslint/no-useless-constructor': 'error',
+    '@typescript-eslint/no-useless-constructor': 'off', // Incorrect working with emitDecoratorMetadata
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-var-requires': 'error', // !
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
