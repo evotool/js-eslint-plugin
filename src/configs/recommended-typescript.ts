@@ -39,9 +39,7 @@ export default {
     '@typescript-eslint/dot-notation': [
       'warn',
       {
-        allowPrivateClassPropertyAccess: false,
-        allowProtectedClassPropertyAccess: false,
-        allowIndexSignaturePropertyAccess: false,
+        allowKeywords: false
       },
     ],
     'dot-notation': 'off',
