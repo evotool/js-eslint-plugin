@@ -36,12 +36,7 @@ export default {
     ],
     '@typescript-eslint/default-param-last': 'off',
     'default-param-last': 'off',
-    '@typescript-eslint/dot-notation': [
-      'warn',
-      {
-        allowKeywords: false
-      },
-    ],
+    '@typescript-eslint/dot-notation': ['warn'],
     'dot-notation': 'off',
     '@typescript-eslint/explicit-function-return-type': [
       'warn',
@@ -65,7 +60,6 @@ export default {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/func-call-spacing': 'warn',
     'func-call-spacing': 'off',
-
     '@typescript-eslint/indent': [
       'warn',
       2,
