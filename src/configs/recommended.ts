@@ -315,7 +315,7 @@ export default {
     'one-var-declaration-per-line': 'warn',
     'one-var': ['off', { var: 'never', let: 'never', const: 'never' }],
     'operator-assignment': 'warn',
-    'operator-linebreak': ['warn', 'before'],
+    'operator-linebreak': 'warn',
     'padded-blocks': ['warn', 'never'],
     'padding-line-between-statements': [
       'warn',
