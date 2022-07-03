@@ -1,11 +1,13 @@
 /* eslint-disable */
 
-import recommended from './configs/recommended';
-import recommended_typescript from './configs/recommended-typescript';
+import ecmascript from './configs/ecmascript';
+import typescript from './configs/typescript';
+import react from './configs/react';
 
 export = {
   configs: {
-    'recommended': recommended,
-    'recommended-typescript': recommended_typescript,
+    ecmascript,
+    typescript,
+    react,
   },
 };

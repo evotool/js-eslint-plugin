@@ -3,12 +3,20 @@
 export default {
   parser: '@typescript-eslint/parser',
   parserOptions: { sourceType: 'module' },
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['@typescript-eslint', 'import', 'unused-imports'],
   extends: ['plugin:import/typescript'],
   rules: {
+    'unused-imports/no-unused-imports-ts': 'warn',
+    'unused-imports/no-unused-imports': 'off',
+    'unused-imports/no-unused-vars-ts': 'off',
+    'unused-imports/no-unused-vars': 'off',
+
+    'import/no-unresolved': 'off', // !
+
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': 'error',
     '@typescript-eslint/await-thenable': 'error',
+    '@typescript-eslint/ban-tslint-comment': 'warn',
     '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': false }],
     '@typescript-eslint/ban-types': [
       'warn',
@@ -24,14 +32,16 @@ export default {
     'comma-dangle': 'off',
     '@typescript-eslint/comma-spacing': 'warn',
     'comma-spacing': 'off',
+    '@typescript-eslint/consistent-generic-constructors': ['warn', 'constructor'],
     '@typescript-eslint/consistent-indexed-object-style': ['off', 'record'],
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': 'error',
+    '@typescript-eslint/consistent-type-exports': 'warn',
     '@typescript-eslint/consistent-type-imports': [
       'warn',
       {
         prefer: 'type-imports',
-        disallowTypeAnnotations: true,
+        disallowTypeAnnotations: false,
       },
     ],
     '@typescript-eslint/default-param-last': 'off',
@@ -103,7 +113,15 @@ export default {
     '@typescript-eslint/member-ordering': [
       'warn',
       {
-        default: ['abstract-field', 'abstract-method', 'static-field', 'instance-field', 'constructor', 'instance-method', 'static-method'],
+        default: [
+          'abstract-field',
+          'abstract-method',
+          'static-field',
+          'instance-field',
+          'constructor',
+          'instance-method',
+          'static-method',
+        ],
       },
     ],
     '@typescript-eslint/method-signature-style': ['off', 'method'],
@@ -115,11 +133,13 @@ export default {
     '@typescript-eslint/no-confusing-void-expression': 'off',
     '@typescript-eslint/no-dupe-class-members': 'error',
     'no-dupe-class-members': 'off',
+    '@typescript-eslint/no-duplicate-enum-values': 'warn',
     '@typescript-eslint/no-duplicate-imports': 'error',
     'no-duplicate-imports': 'off',
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     'no-empty-function': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     '@typescript-eslint/no-extra-parens': [
@@ -162,6 +182,7 @@ export default {
     'no-loss-of-precision': 'off',
     '@typescript-eslint/no-magic-numbers': 'off',
     'no-magic-numbers': 'off',
+    '@typescript-eslint/no-meaningless-void-operator': 'warn',
     '@typescript-eslint/no-misused-new': 'error',
     '@typescript-eslint/no-misused-promises': [
       'error',
@@ -171,12 +192,22 @@ export default {
       },
     ],
     '@typescript-eslint/no-namespace': 'off',
-    '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
+    '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'off',
+    '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/no-redeclare': 'error',
     'no-redeclare': 'off',
-    '@typescript-eslint/no-require-imports': 'error',
+    '@typescript-eslint/no-redundant-type-constituents': 'off',
+    '@typescript-eslint/no-require-imports': 'warn',
+    '@typescript-eslint/no-restricted-imports': [
+      'warn',
+      {
+        'paths': ['.', '..', '../..'],
+        'patterns': [],
+      },
+    ],
+    'no-restricted-imports': 'off',
     '@typescript-eslint/no-shadow': 'off',
     '@typescript-eslint/no-this-alias': 'error', // !
     '@typescript-eslint/no-throw-literal': 'error',
@@ -201,7 +232,6 @@ export default {
       },
     ],
     'no-unused-expressions': 'off',
-    '@typescript-eslint/no-unused-vars-experimental': 'off',
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {
@@ -215,10 +245,59 @@ export default {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-useless-constructor': 'off', // Incorrect working with emitDecoratorMetadata
     'no-useless-constructor': 'off',
-    '@typescript-eslint/no-var-requires': 'error', // !
+    '@typescript-eslint/no-useless-empty-export': 'off', // In *.d.ts with declare global it needed
+    '@typescript-eslint/no-var-requires': 'off', // !
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
     '@typescript-eslint/object-curly-spacing': ['warn', 'always'],
     'object-curly-spacing': 'off',
+
+    'padding-line-between-statements': 'off',
+    '@typescript-eslint/padding-line-between-statements': [
+      'warn',
+      {
+        blankLine: 'always',
+        prev: 'block-like',
+        next: '*',
+      },
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: [
+          'break',
+          'class',
+          'const',
+          'continue',
+          'do',
+          'for',
+          'function',
+          'if',
+          'interface',
+          'let',
+          'return',
+          'switch',
+          'throw',
+          'try',
+          'type',
+          'while',
+        ],
+      },
+      {
+        blankLine: 'always',
+        prev: ['const', 'let', 'type'],
+        next: '*',
+      },
+      {
+        blankLine: 'any',
+        prev: ['const', 'let'],
+        next: ['const', 'let'],
+      },
+      {
+        blankLine: 'any',
+        prev: ['type'],
+        next: ['type'],
+      },
+    ],
+    '@typescript-eslint/parameter-properties': 'off',
     '@typescript-eslint/prefer-as-const': 'error',
     '@typescript-eslint/prefer-enum-initializers': 'warn',
     '@typescript-eslint/prefer-for-of': 'error',
@@ -232,6 +311,7 @@ export default {
     '@typescript-eslint/prefer-readonly': 'warn',
     '@typescript-eslint/prefer-reduce-type-parameter': 'off',
     '@typescript-eslint/prefer-regexp-exec': 'error',
+    '@typescript-eslint/prefer-return-this-type': 'warn',
     '@typescript-eslint/prefer-string-starts-ends-with': 'error',
     '@typescript-eslint/prefer-ts-expect-error': 'off',
     '@typescript-eslint/promise-function-async': 'off',
@@ -257,6 +337,8 @@ export default {
     '@typescript-eslint/semi': ['error', 'always'],
     'semi': 'off',
     '@typescript-eslint/sort-type-union-intersection-members': 'off',
+    '@typescript-eslint/space-before-blocks': 'warn',
+    'space-before-blocks': 'off',
     '@typescript-eslint/space-before-function-paren': [
       'warn',
       {
@@ -275,11 +357,12 @@ export default {
     '@typescript-eslint/typedef': [
       'warn',
       {
-        arrowParameter: false,
-        variableDeclarationIgnoreFunction: true,
-        objectDestructuring: false,
         arrayDestructuring: false,
+        arrowParameter: false,
         memberVariableDeclaration: false,
+        objectDestructuring: false,
+        parameter: true,
+        variableDeclarationIgnoreFunction: true,
       },
     ],
     '@typescript-eslint/unbound-method': 'error', // !

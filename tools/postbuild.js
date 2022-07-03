@@ -1,4 +1,4 @@
-const { writeFileSync, readFileSync, copyFileSync } = require('fs');
+const { writeFileSync, readFileSync, copyFileSync, existsSync, unlinkSync  } = require('fs');
 const { sync } = require('glob');
 const { resolve } = require('path');
 
@@ -14,4 +14,10 @@ const jsTsFiles = sync(resolve(__dirname, '../dist/**/*.{js,ts}'));
 
 for (const f of jsTsFiles) {
   writeFileSync(f, readFileSync(f, 'utf-8').replace(/ {4}/g, '\t'));
+}
+
+const tsbuildinfoPath = resolve(__dirname, '../dist/tsconfig.tsbuildinfo');
+
+if (existsSync(tsbuildinfoPath)) {
+  unlinkSync(tsbuildinfoPath);
 }
