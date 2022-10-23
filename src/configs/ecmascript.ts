@@ -149,7 +149,7 @@ export default {
         exceptAfterSingleLine: true,
       },
     ],
-    'logical-assignment-operators': ['warn', 'always', { enforceIfStatements: true }],
+    'logical-assignment-operators': ['warn', 'always', { enforceForIfStatements: true }],
     'max-classes-per-file': 'off',
     'max-depth': 'off',
     'max-len': 'off',
