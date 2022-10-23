@@ -282,11 +282,6 @@ export default {
         ],
       },
       {
-        blankLine: 'always',
-        prev: ['const', 'let', 'type'],
-        next: '*',
-      },
-      {
         blankLine: 'any',
         prev: ['const', 'let'],
         next: ['const', 'let'],

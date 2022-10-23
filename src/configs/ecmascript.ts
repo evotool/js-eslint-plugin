@@ -149,6 +149,7 @@ export default {
         exceptAfterSingleLine: true,
       },
     ],
+    'logical-assignment-operators': ['warn', 'always', { enforceIfStatements: true }],
     'max-classes-per-file': 'off',
     'max-depth': 'off',
     'max-len': 'off',
@@ -389,14 +390,6 @@ export default {
           'try',
           'while',
         ],
-      },
-      {
-        blankLine: 'always',
-        prev: [
-          'const',
-          'let',
-        ],
-        next: '*',
       },
       {
         blankLine: 'any',
