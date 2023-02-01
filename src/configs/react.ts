@@ -60,9 +60,9 @@ export default {
     'react/jsx-pascal-case': 'off',
     'react/jsx-props-no-multi-spaces': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'react/jsx-sort-default-props': 'off',
+    // 'react/jsx-sort-default-props': 'off', // deprecated
     'react/jsx-sort-props': 'off',
-    'react/jsx-space-before-closing': 'off',
+    // 'react/jsx-space-before-closing': 'off', // deprecated
     'react/jsx-tag-spacing': 'off',
     'react/jsx-uses-react': 'off',
     'react/jsx-uses-vars': 'error',
@@ -83,6 +83,7 @@ export default {
     'react/no-is-mounted': 'error',
     'react/no-multi-comp': 'off',
     'react/no-namespace': 'off',
+    'react/no-object-type-as-default-prop': 'off',
     'react/no-redundant-should-component-update': 'off',
     'react/no-render-return-value': 'error',
     'react/no-set-state': 'off',
@@ -108,6 +109,7 @@ export default {
     'react/require-render-return': 'error',
     'react/self-closing-comp': 'off',
     'react/sort-comp': 'off',
+    'react/sort-default-props': 'off',
     'react/sort-prop-types': 'off',
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',

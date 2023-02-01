@@ -1,6 +1,6 @@
 {
   "name": "@evojs/eslint-plugin",
-  "version": "5.0.1",
+  "version": "5.2.0",
   "description": "Plugin for eslint",
   "main": "index.js",
   "license": "MIT",
@@ -13,18 +13,19 @@
     "release": "npm publish --access public dist/"
   },
   "dependencies": {
-    "eslint-plugin-import": "~2.26.0",
+    "eslint-plugin-import": "~2.27.5",
+    "eslint-plugin-lodash": "^7.4.0",
     "eslint-plugin-unused-imports": "~2.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
     "chalk": "^4.1.2",
-    "eslint": "~8.26.0",
-    "eslint-plugin-react": "^7.31.10",
+    "eslint": "~8.33.0",
+    "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "glob": "~8.0.3",
-    "typescript": "~4.8.4"
+    "glob": "~8.1.0",
+    "typescript": "~4.9.5"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">=5.30.0",

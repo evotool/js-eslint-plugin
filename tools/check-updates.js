@@ -1,13 +1,19 @@
 const chalk = require('chalk');
 
-function getAllRules(path, prefix) {
-  const rules = Object.keys(require(path).rules);
+function getAllRuleNames(path, prefix) {
+  const { rules } = require(path);
+
+  const all = Object.keys(rules).filter((n) => !rules[n].meta?.deprecated);
+  const deprecated = all.filter((n) => rules[n].meta?.deprecated);
 
   if (prefix) {
-    return rules.map((r) => `${prefix}/${r}`);
+    return {
+      all: all.map((r) => `${prefix}/${r}`),
+      deprecated: deprecated.map((r) => `${prefix}/${r}`),
+    };
   }
 
-  return rules;
+  return { all, deprecated };
 }
 
 function getCurrentRules(path) {
@@ -25,18 +31,26 @@ const sortFn = (a, b) =>
     ? 1
     : 0;
 
-const allRules = [
-  ...new Set(
-    [
-      getAllRules('../node_modules/eslint/conf/eslint-all'),
-      getAllRules('../node_modules/@typescript-eslint/eslint-plugin', '@typescript-eslint'),
-      getAllRules('../node_modules/eslint-plugin-import', 'import'),
-      getAllRules('../node_modules/eslint-plugin-react', 'react'),
-      getAllRules('../node_modules/eslint-plugin-react-hooks', 'react-hooks'),
-      getAllRules('../node_modules/eslint-plugin-unused-imports', 'unused-imports'),
-    ].flat(),
-  ),
-].sort(sortFn);
+const { allRules, allDeprecatedRules } = [
+  getAllRuleNames('../node_modules/eslint/conf/eslint-all'),
+  getAllRuleNames('../node_modules/@typescript-eslint/eslint-plugin', '@typescript-eslint'),
+  getAllRuleNames('../node_modules/eslint-plugin-import', 'import'),
+  getAllRuleNames('../node_modules/eslint-plugin-react', 'react'),
+  getAllRuleNames('../node_modules/eslint-plugin-lodash', 'lodash'),
+  getAllRuleNames('../node_modules/eslint-plugin-react-hooks', 'react-hooks'),
+  getAllRuleNames('../node_modules/eslint-plugin-unused-imports', 'unused-imports'),
+].reduce(
+  (p, n) => {
+    p.allRules.push(...n.all);
+    p.allDeprecatedRules.push(...n.deprecated);
+
+    return p;
+  },
+  { allRules: [], allDeprecatedRules: [] },
+);
+
+allRules.sort(sortFn);
+allDeprecatedRules.sort(sortFn);
 
 const currentRules = [
   ...new Set(
@@ -49,7 +63,7 @@ const currentRules = [
 ].sort(sortFn);
 
 const newRules = allRules.filter((ar) => !currentRules.some((cr) => cr === ar));
-const deprecatedRules = currentRules.filter((cr) => !allRules.some((ar) => cr === ar));
+const deprecatedRules = currentRules.filter((cr) => allDeprecatedRules.some((ar) => cr === ar));
 
 console.log('Checking rules:');
 
