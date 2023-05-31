@@ -1,7 +1,15 @@
 const chalk = require('chalk');
 
-function getAllRuleNames(path, prefix) {
-  const { rules } = require(path);
+function getAllRuleNames(path, prefix, pack) {
+  const { rules } = pack
+    ? {
+        rules: Object.fromEntries(
+          Array.from(require(path).entries())
+            .map(([ruleId, rule]) => (rule.meta.deprecated ? null : [ruleId, 'error']))
+            .filter(Boolean),
+        ),
+      }
+    : require(path);
 
   const all = Object.keys(rules).filter((n) => !rules[n].meta?.deprecated);
   const deprecated = all.filter((n) => rules[n].meta?.deprecated);
@@ -32,7 +40,7 @@ const sortFn = (a, b) =>
     : 0;
 
 const { allRules, allDeprecatedRules } = [
-  getAllRuleNames('../node_modules/eslint/conf/eslint-all'),
+  getAllRuleNames('../node_modules/eslint/lib/rules', undefined, true),
   getAllRuleNames('../node_modules/@typescript-eslint/eslint-plugin', '@typescript-eslint'),
   getAllRuleNames('../node_modules/eslint-plugin-import', 'import'),
   getAllRuleNames('../node_modules/eslint-plugin-react', 'react'),

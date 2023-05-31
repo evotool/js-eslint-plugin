@@ -25,6 +25,8 @@ export default {
         extendDefaults: false,
       },
     ],
+    '@typescript-eslint/block-spacing': ['warn', 'always'],
+    'block-spacing': 'off',
     '@typescript-eslint/brace-style': ['warn', '1tbs'],
     'brace-style': 'off',
     '@typescript-eslint/class-literal-property-style': 'warn',
@@ -98,6 +100,13 @@ export default {
     'key-spacing': 'off',
     '@typescript-eslint/keyword-spacing': 'warn',
     'keyword-spacing': 'off',
+    '@typescript-eslint/lines-around-comment': [
+      'warn',
+      {
+        allowBlockStart: true,
+      },
+    ],
+    'lines-around-comment': 'off',
     '@typescript-eslint/lines-between-class-members': [
       'warn',
       'always',
@@ -137,8 +146,7 @@ export default {
     '@typescript-eslint/no-dupe-class-members': 'error',
     'no-dupe-class-members': 'off',
     '@typescript-eslint/no-duplicate-enum-values': 'warn',
-    // '@typescript-eslint/no-duplicate-imports': 'error', // deprecated
-    // 'no-duplicate-imports': 'off',
+    '@typescript-eslint/no-duplicate-type-constituents': 'warn',
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     'no-empty-function': 'off',
@@ -169,6 +177,7 @@ export default {
     // ], // deprecated, TS1196
     '@typescript-eslint/no-implied-eval': 'error',
     'no-implied-eval': 'off',
+    '@typescript-eslint/no-import-type-side-effects': 'off',
     '@typescript-eslint/no-inferrable-types': [
       'error',
       {
@@ -194,6 +203,7 @@ export default {
         checksVoidReturn: true,
       },
     ],
+    '@typescript-eslint/no-mixed-enums': 'warn',
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'off',
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
@@ -226,6 +236,7 @@ export default {
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-unsafe-call': 'off',
     '@typescript-eslint/no-unsafe-declaration-merging': 'warn',
+    '@typescript-eslint/no-unsafe-enum-comparison': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/no-unsafe-return': 'error', // !
     '@typescript-eslint/no-unused-expressions': [
