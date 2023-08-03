@@ -340,7 +340,7 @@ export default {
     '@typescript-eslint/restrict-plus-operands': [
       'warn',
       {
-        checkCompoundAssignments: true,
+        skipCompoundAssignments: true,
       },
     ],
     '@typescript-eslint/restrict-template-expressions': 'off',
