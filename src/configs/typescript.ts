@@ -30,6 +30,7 @@ export default {
     '@typescript-eslint/brace-style': ['warn', '1tbs'],
     'brace-style': 'off',
     '@typescript-eslint/class-literal-property-style': 'warn',
+    '@typescript-eslint/class-methods-use-this': 'off',
     '@typescript-eslint/comma-dangle': ['warn', 'always-multiline'],
     'comma-dangle': 'off',
     '@typescript-eslint/comma-spacing': 'warn',

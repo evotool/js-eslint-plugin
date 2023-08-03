@@ -41,7 +41,7 @@ const sortFn = (a, b) =>
 
 const { allRules, allDeprecatedRules } = [
   getAllRuleNames('../node_modules/eslint/lib/rules', undefined, true),
-  getAllRuleNames('../node_modules/@typescript-eslint/eslint-plugin', '@typescript-eslint'),
+  getAllRuleNames('../node_modules/@typescript-eslint/eslint-plugin/dist', '@typescript-eslint'),
   getAllRuleNames('../node_modules/eslint-plugin-import', 'import'),
   getAllRuleNames('../node_modules/eslint-plugin-react', 'react'),
   getAllRuleNames('../node_modules/eslint-plugin-lodash', 'lodash'),
