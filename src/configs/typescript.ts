@@ -333,7 +333,7 @@ export default {
     '@typescript-eslint/prefer-namespace-keyword': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/prefer-optional-chain': 'error',
-    '@typescript-eslint/prefer-promise-reject-errors': 'error',
+    '@typescript-eslint/prefer-promise-reject-errors': 'off',
     'prefer-promise-reject-errors': 'off',
     '@typescript-eslint/prefer-readonly-parameter-types': 'off',
     '@typescript-eslint/prefer-readonly': 'warn',
