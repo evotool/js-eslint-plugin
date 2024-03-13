@@ -37,6 +37,8 @@ export default {
     'comma-spacing': 'off',
     '@typescript-eslint/consistent-generic-constructors': ['warn', 'constructor'],
     '@typescript-eslint/consistent-indexed-object-style': ['off', 'record'],
+    '@typescript-eslint/consistent-return':'off',
+    'consistent-return': 'off',
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': 'error',
     '@typescript-eslint/consistent-type-exports': 'warn',
@@ -116,6 +118,8 @@ export default {
       },
     ],
     'lines-between-class-members': 'off',
+    '@typescript-eslint/max-params': 'off',
+    'max-params': 'off',
     '@typescript-eslint/member-delimiter-style': [
       'warn',
       {
@@ -141,6 +145,7 @@ export default {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/no-array-constructor': 'error',
     'no-array-constructor': 'off',
+    '@typescript-eslint/no-array-delete': 'error',
     '@typescript-eslint/no-base-to-string': 'warn',
     '@typescript-eslint/no-confusing-non-null-assertion': 'warn',
     '@typescript-eslint/no-confusing-void-expression': 'off',
@@ -239,6 +244,7 @@ export default {
     '@typescript-eslint/no-unsafe-declaration-merging': 'warn',
     '@typescript-eslint/no-unsafe-enum-comparison': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
+    '@typescript-eslint/no-unsafe-unary-minus': 'error',
     '@typescript-eslint/no-unsafe-return': 'error', // !
     '@typescript-eslint/no-unused-expressions': [
       'error',
@@ -262,6 +268,7 @@ export default {
     '@typescript-eslint/no-useless-constructor': 'off', // Incorrect working with emitDecoratorMetadata
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-empty-export': 'off', // In *.d.ts with declare global it needed
+    '@typescript-eslint/no-useless-template-literals': 'warn',
     '@typescript-eslint/no-var-requires': 'off', // !
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
     '@typescript-eslint/object-curly-spacing': ['warn', 'always'],
@@ -311,13 +318,23 @@ export default {
     '@typescript-eslint/parameter-properties': 'off',
     '@typescript-eslint/prefer-as-const': 'error',
     '@typescript-eslint/prefer-enum-initializers': 'warn',
+    '@typescript-eslint/prefer-find': 'error',
     '@typescript-eslint/prefer-for-of': 'error',
     '@typescript-eslint/prefer-function-type': 'error',
+    '@typescript-eslint/prefer-destructuring': [
+      'error',
+      {
+        AssignmentExpression: { array: false, object: false },
+      },
+    ],
+    'prefer-destructuring': 'off',
     '@typescript-eslint/prefer-includes': 'error',
     '@typescript-eslint/prefer-literal-enum-member': 'warn',
     '@typescript-eslint/prefer-namespace-keyword': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/prefer-optional-chain': 'error',
+    '@typescript-eslint/prefer-promise-reject-errors': 'error',
+    'prefer-promise-reject-errors': 'off',
     '@typescript-eslint/prefer-readonly-parameter-types': 'off',
     '@typescript-eslint/prefer-readonly': 'warn',
     '@typescript-eslint/prefer-reduce-type-parameter': 'off',
