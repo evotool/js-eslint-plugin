@@ -37,7 +37,7 @@ export default {
     'comma-spacing': 'off',
     '@typescript-eslint/consistent-generic-constructors': ['warn', 'constructor'],
     '@typescript-eslint/consistent-indexed-object-style': ['off', 'record'],
-    '@typescript-eslint/consistent-return':'off',
+    '@typescript-eslint/consistent-return': 'off',
     'consistent-return': 'off',
     '@typescript-eslint/consistent-type-assertions': 'error',
     '@typescript-eslint/consistent-type-definitions': 'error',
@@ -235,6 +235,7 @@ export default {
     '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'off',
     '@typescript-eslint/no-unnecessary-qualifier': 'warn',
+    '@typescript-eslint/no-unnecessary-template-expression': 'warn',
     '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
     '@typescript-eslint/no-unnecessary-type-assertion': 'error', // !
     '@typescript-eslint/no-unnecessary-type-constraint': 'error',
@@ -272,6 +273,7 @@ export default {
     '@typescript-eslint/no-var-requires': 'off', // !
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
     '@typescript-eslint/object-curly-spacing': ['warn', 'always'],
+    '@typescript-eslint/only-throw-error': 'warn',
     'object-curly-spacing': 'off',
 
     'padding-line-between-statements': 'off',
@@ -396,6 +398,7 @@ export default {
     ],
     '@typescript-eslint/unbound-method': 'error', // !
     '@typescript-eslint/unified-signatures': 'off',
+    '@typescript-eslint/use-unknown-in-catch-callback-variable': 'off',
 
     'constructor-super': 'off',
     'getter-return': 'off',
