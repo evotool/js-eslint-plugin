@@ -2,14 +2,14 @@
   "compilerOptions": {
     "baseUrl": "./",
     "lib": ["esnext"],
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": false,
     "outDir": "dist/",
     "removeComments": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5"
+    "target": "esnext"
   },
   "exclude": ["node_modules/", "dist/"]
 }
