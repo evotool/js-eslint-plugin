@@ -1,7 +1,25 @@
 /* eslint-disable */
 
+import * as importPlugin from 'eslint-plugin-import';
+import * as lodashPlugin from 'eslint-plugin-lodash';
+import * as unusedImportsPlugin from 'eslint-plugin-unused-imports';
+
 export default {
-  plugins: ['import', 'lodash', 'unused-imports'],
+  name: 'ecmascript',
+  plugins: {
+    'import': importPlugin,
+    'lodash': lodashPlugin,
+    'unused-imports': unusedImportsPlugin,
+  },
+  languageOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: false,
+      },
+    },
+  },
   rules: {
     'lodash/callback-binding': 'warn',
     'lodash/chain-style': ['warn', 'as-needed'],
@@ -235,7 +253,7 @@ export default {
     'no-dupe-else-if': 'error',
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
-    'no-duplicate-imports': 'error',
+    // УДАЛЕНО: 'no-duplicate-imports': 'error', // Заменено на import/no-duplicates
     'no-else-return': ['warn', { allowElseIf: false }],
     'no-empty-character-class': 'error',
     'no-empty-function': 'off',
@@ -527,4 +545,4 @@ export default {
     'yield-star-spacing': ['warn', 'after'],
     'yoda': ['error', 'never'],
   },
-};
+} satisfies import('eslint').Linter.Config;

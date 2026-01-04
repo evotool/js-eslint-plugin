@@ -1,15 +1,43 @@
 /* eslint-disable */
 
+import * as unusedImportsPlugin from 'eslint-plugin-unused-imports';
+import * as importPlugin from 'eslint-plugin-import';
+import * as typescriptPlugin from '@typescript-eslint/eslint-plugin';
+
 export default {
-  parser: '@typescript-eslint/parser',
-  parserOptions: { sourceType: 'module' },
-  plugins: ['@typescript-eslint', 'import', 'unused-imports'],
-  extends: ['plugin:import/typescript'],
+  name: 'typescript',
+  plugins: {
+    '@typescript-eslint': typescriptPlugin,
+    'import': importPlugin,
+    'unused-imports': unusedImportsPlugin,
+  },
+  languageOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      project: true, // Включение проверки на основе tsconfig.json
+      tsconfigRootDir: process.cwd(),
+    },
+  },
+  settings: {
+    'import/resolver': {
+      typescript: true,
+    },
+  },
   rules: {
-    'unused-imports/no-unused-imports-ts': 'warn',
-    'unused-imports/no-unused-imports': 'off',
-    'unused-imports/no-unused-vars-ts': 'off',
-    'unused-imports/no-unused-vars': 'off',
+    // 'unused-imports/no-unused-imports-ts': 'warn', // deprecated
+    'unused-imports/no-unused-imports': 'warn',
+    // 'unused-imports/no-unused-vars-ts': 'off', // deprecated
+    'unused-imports/no-unused-vars': [
+      'warn',
+      {
+        args: 'none',
+        caughtErrors: 'none',
+        ignoreRestSiblings: true,
+        vars: 'all',
+      },
+    ],
 
     'import/no-unresolved': 'off', // !
 
@@ -235,7 +263,7 @@ export default {
     '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'off',
     '@typescript-eslint/no-unnecessary-qualifier': 'warn',
-    '@typescript-eslint/no-unnecessary-template-expression': 'warn',
+    // '@typescript-eslint/no-unnecessary-template-expression': 'warn', // deprecated в v8
     '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
     '@typescript-eslint/no-unnecessary-type-assertion': 'error', // !
     '@typescript-eslint/no-unnecessary-type-constraint': 'error',
@@ -266,11 +294,14 @@ export default {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-use-before-define': 'warn',
     'no-use-before-define': 'off',
+    '@typescript-eslint/no-duplicate-jsx-props': 'error', // Новое в v8
+    '@typescript-eslint/no-unsafe-function-type': 'off', // Новое в v8
     '@typescript-eslint/no-useless-constructor': 'off', // Incorrect working with emitDecoratorMetadata
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-empty-export': 'off', // In *.d.ts with declare global it needed
     '@typescript-eslint/no-useless-template-literals': 'warn',
     '@typescript-eslint/no-var-requires': 'off', // !
+    // '@typescript-eslint/no-useless-template-literals': 'warn', // deprecated в v8
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
     '@typescript-eslint/object-curly-spacing': ['warn', 'always'],
     '@typescript-eslint/only-throw-error': 'warn',
@@ -319,6 +350,7 @@ export default {
     ],
     '@typescript-eslint/parameter-properties': 'off',
     '@typescript-eslint/prefer-as-const': 'error',
+    '@typescript-eslint/prefer-destructuring-enums': 'off', // Новое в v8
     '@typescript-eslint/prefer-enum-initializers': 'warn',
     '@typescript-eslint/prefer-find': 'error',
     '@typescript-eslint/prefer-for-of': 'error',
@@ -332,6 +364,7 @@ export default {
     'prefer-destructuring': 'off',
     '@typescript-eslint/prefer-includes': 'error',
     '@typescript-eslint/prefer-literal-enum-member': 'warn',
+    '@typescript-eslint/prefer-method-signature': 'off', // Новое в v8
     '@typescript-eslint/prefer-namespace-keyword': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/prefer-optional-chain': 'error',
@@ -422,4 +455,4 @@ export default {
     'prefer-spread': 'error',
     'valid-typeof': 'off', // ts(2367)
   },
-};
+} satisfies import('eslint').Linter.Config;

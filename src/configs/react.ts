@@ -1,33 +1,48 @@
 /* eslint-disable */
+import * as reactPlugin from 'eslint-plugin-react';
+import * as reactHooksPlugin from 'eslint-plugin-react-hooks';
 
 export default {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    jsxPragma: null,
+  name: 'react',
+  plugins: {
+    'react': reactPlugin,
+    'react-hooks': reactHooksPlugin as any,
   },
-  plugins: ['react', 'react-hooks'],
+  languageOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+      jsxPragma: null,
+    },
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
     // react-hooks
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
 
     // react
-    'react/boolean-prop-naming': 'off',
+    // 'react/boolean-prop-naming': 'off', // deprecated
     'react/button-has-type': 'off',
-    'react/checked-requires-onchange-or-readonly': 'off',
-    'react/default-props-match-prop-types': 'off',
-    'react/destructuring-assignment': 'off', // +-
+    // 'react/checked-requires-onchange-or-readonly': 'off', // Новое правило, нужно устанавливать явно
+    // 'react/default-props-match-prop-types': 'off', // deprecated
+    'react/destructuring-assignment': 'off',
     'react/display-name': 'error',
     'react/forbid-component-props': 'off',
     'react/forbid-dom-props': 'off',
     'react/forbid-elements': 'off',
-    'react/forbid-foreign-prop-types': 'off',
-    'react/forbid-prop-types': 'off', // +-
-    'react/function-component-definition': 'off', // +-
-    'react/hook-use-state': 'off',
+    // 'react/forbid-foreign-prop-types': 'off', // deprecated
+    // 'react/forbid-prop-types': 'off', // deprecated
+    'react/function-component-definition': 'off',
+    // 'react/hook-use-state': 'off', // Новое правило, нужно устанавливать явно
     'react/iframe-missing-sandbox': 'off',
     'react/jsx-boolean-value': 'off',
     'react/jsx-child-element-spacing': 'off',
@@ -71,7 +86,7 @@ export default {
     'react/no-access-state-in-setstate': 'off',
     'react/no-adjacent-inline-elements': 'off',
     'react/no-array-index-key': 'off',
-    'react/no-arrow-function-lifecycle': 'off',
+    // 'react/no-arrow-function-lifecycle': 'off', // deprecated
     'react/no-children-prop': 'error',
     'react/no-danger-with-children': 'error',
     'react/no-danger': 'off',
@@ -84,7 +99,7 @@ export default {
     'react/no-is-mounted': 'error',
     'react/no-multi-comp': 'off',
     'react/no-namespace': 'off',
-    'react/no-object-type-as-default-prop': 'off',
+    // 'react/no-object-type-as-default-prop': 'off', // deprecated
     'react/no-redundant-should-component-update': 'off',
     'react/no-render-return-value': 'error',
     'react/no-set-state': 'off',
@@ -93,11 +108,11 @@ export default {
     'react/no-typos': 'off',
     'react/no-unescaped-entities': 'error',
     'react/no-unknown-property': 'warn',
-    'react/no-unsafe': 'off',
+    // 'react/no-unsafe': 'off', // deprecated
     'react/no-unstable-nested-components': 'off',
-    'react/no-unused-class-component-methods': 'off',
-    'react/no-unused-prop-types': 'off',
-    'react/no-unused-state': 'off',
+    // 'react/no-unused-class-component-methods': 'off', // Новое правило, нужно устанавливать явно
+    // 'react/no-unused-prop-types': 'off', // deprecated
+    // 'react/no-unused-state': 'off', // deprecated
     'react/no-will-update-set-state': 'off',
     'react/prefer-es6-class': 'off',
     'react/prefer-exact-props': 'off',
@@ -105,7 +120,7 @@ export default {
     'react/prefer-stateless-function': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/require-default-props': 'off',
+    // 'react/require-default-props': 'off', // deprecated
     'react/require-optimization': 'off',
     'react/require-render-return': 'error',
     'react/self-closing-comp': 'off',
@@ -120,4 +135,4 @@ export default {
     // eslint
     'no-empty-pattern': 'off',
   },
-};
+} satisfies import('eslint').Linter.Config;
