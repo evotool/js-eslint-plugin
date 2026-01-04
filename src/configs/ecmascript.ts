@@ -544,5 +544,13 @@ export default {
     'wrap-regex': 'warn',
     'yield-star-spacing': ['warn', 'after'],
     'yoda': ['error', 'never'],
+
+    // new rules
+    'import/enforce-node-protocol-usage': 'off',
+
+    'no-duplicate-imports': 'off',
+    'no-unassigned-vars': 'off',
+    'no-useless-assignment': 'off',
+    'preserve-caught-error': 'off',
   },
 } satisfies import('eslint').Linter.Config;

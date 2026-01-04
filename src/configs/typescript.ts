@@ -454,5 +454,27 @@ export default {
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'valid-typeof': 'off', // ts(2367)
+
+    // new rules
+    '@typescript-eslint/no-deprecated': 'off',
+    '@typescript-eslint/no-empty-object-type': 'off',
+    '@typescript-eslint/no-misused-spread': 'off',
+    '@typescript-eslint/no-restricted-types': 'off',
+    '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'off',
+    '@typescript-eslint/no-unnecessary-template-expression': 'off',
+    '@typescript-eslint/no-unnecessary-type-conversion': 'off',
+    '@typescript-eslint/no-unnecessary-type-parameters': 'off',
+    '@typescript-eslint/no-unsafe-type-assertion': 'off',
+    '@typescript-eslint/no-unused-private-class-members': 'off',
+    '@typescript-eslint/no-useless-default-assignment': 'off',
+    '@typescript-eslint/no-wrapper-object-types': 'off',
+    '@typescript-eslint/related-getter-setter-pairs': 'off',
+
+    'import/enforce-node-protocol-usage': 'off',
+
+    'no-duplicate-imports': 'off',
+    'no-unassigned-vars': 'off',
+    'no-useless-assignment': 'off',
+    'preserve-caught-error': 'off',
   },
 } satisfies import('eslint').Linter.Config;
