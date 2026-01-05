@@ -277,7 +277,17 @@ export default {
       },
     ],
     '@stylistic/one-var-declaration-per-line': 'warn',
-    '@stylistic/operator-linebreak': 'warn',
+    '@stylistic/operator-linebreak': [
+      'warn',
+      'after',
+      {
+        overrides: {
+          '|': 'before',
+          '?': 'before',
+          ':': 'before',
+        },
+      },
+    ],
     '@stylistic/padded-blocks': ['warn', 'never'],
     '@stylistic/padding-line-between-statements': [
       'warn',
