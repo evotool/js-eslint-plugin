@@ -1,4 +1,5 @@
 const chalk = require('chalk');
+const { writeFileSync } = require('node:fs');
 
 function getAllRuleNames(path, prefix, pack) {
   const { rules } = pack
@@ -14,14 +15,17 @@ function getAllRuleNames(path, prefix, pack) {
   const all = Object.keys(rules).filter((n) => !rules[n].meta?.deprecated);
   const deprecated = all.filter((n) => rules[n].meta?.deprecated);
 
-  if (prefix) {
+  if (prefix !== 'eslint') {
     return {
       all: all.map((r) => `${prefix}/${r}`),
       deprecated: deprecated.map((r) => `${prefix}/${r}`),
     };
   }
 
-  return { all, deprecated };
+  return {
+    all,
+    deprecated,
+  };
 }
 
 function getCurrentRules(path) {
@@ -40,7 +44,8 @@ const sortFn = (a, b) =>
     : 0;
 
 const { allRules, allDeprecatedRules } = [
-  getAllRuleNames('../node_modules/eslint/lib/rules', undefined, true),
+  getAllRuleNames('../node_modules/eslint/lib/rules', 'eslint', true),
+  getAllRuleNames('../node_modules/@stylistic/eslint-plugin/dist', '@stylistic'),
   getAllRuleNames('../node_modules/@typescript-eslint/eslint-plugin/dist', '@typescript-eslint'),
   getAllRuleNames('../node_modules/eslint-plugin-import', 'import'),
   getAllRuleNames('../node_modules/eslint-plugin-react', 'react'),
@@ -54,7 +59,10 @@ const { allRules, allDeprecatedRules } = [
 
     return p;
   },
-  { allRules: [], allDeprecatedRules: [] },
+  {
+    allRules: [],
+    allDeprecatedRules: [],
+  },
 );
 
 allRules.sort(sortFn);

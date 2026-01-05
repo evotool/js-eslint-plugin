@@ -3,10 +3,13 @@
 import * as unusedImportsPlugin from 'eslint-plugin-unused-imports';
 import * as importPlugin from 'eslint-plugin-import';
 import * as typescriptPlugin from '@typescript-eslint/eslint-plugin';
+// @ts-ignore
+import * as parser from '@typescript-eslint/parser';
 
 export default {
   name: 'typescript',
   plugins: {
+    // @ts-ignore
     '@typescript-eslint': typescriptPlugin,
     'import': importPlugin,
     'unused-imports': unusedImportsPlugin,
@@ -14,7 +17,7 @@ export default {
   languageOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    parser: '@typescript-eslint/parser',
+    parser,
     parserOptions: {
       project: true, // Включение проверки на основе tsconfig.json
       tsconfigRootDir: process.cwd(),
@@ -26,9 +29,7 @@ export default {
     },
   },
   rules: {
-    // 'unused-imports/no-unused-imports-ts': 'warn', // deprecated
     'unused-imports/no-unused-imports': 'warn',
-    // 'unused-imports/no-unused-vars-ts': 'off', // deprecated
     'unused-imports/no-unused-vars': [
       'warn',
       {
@@ -46,23 +47,8 @@ export default {
     '@typescript-eslint/await-thenable': 'error',
     '@typescript-eslint/ban-tslint-comment': 'warn',
     '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': false }],
-    '@typescript-eslint/ban-types': [
-      'warn',
-      {
-        types: {},
-        extendDefaults: false,
-      },
-    ],
-    '@typescript-eslint/block-spacing': ['warn', 'always'],
-    'block-spacing': 'off',
-    '@typescript-eslint/brace-style': ['warn', '1tbs'],
-    'brace-style': 'off',
     '@typescript-eslint/class-literal-property-style': 'warn',
     '@typescript-eslint/class-methods-use-this': 'off',
-    '@typescript-eslint/comma-dangle': ['warn', 'always-multiline'],
-    'comma-dangle': 'off',
-    '@typescript-eslint/comma-spacing': 'warn',
-    'comma-spacing': 'off',
     '@typescript-eslint/consistent-generic-constructors': ['warn', 'constructor'],
     '@typescript-eslint/consistent-indexed-object-style': ['off', 'record'],
     '@typescript-eslint/consistent-return': 'off',
@@ -101,24 +87,6 @@ export default {
       },
     ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/func-call-spacing': 'warn',
-    'func-call-spacing': 'off',
-    '@typescript-eslint/indent': [
-      'warn',
-      2,
-      {
-        SwitchCase: 1,
-        FunctionDeclaration: { parameters: 'first' },
-        FunctionExpression: { parameters: 'first' },
-        ignoredNodes: [
-          'TSTypeParameterInstantiation',
-          'FunctionExpression > .params[decorators.length > 0]',
-          'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
-          'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key',
-        ],
-      },
-    ],
-    'indent': 'off',
     '@typescript-eslint/init-declarations': [
       'off',
       'never',
@@ -127,34 +95,8 @@ export default {
       },
     ],
     'init-declarations': 'off',
-    '@typescript-eslint/key-spacing': 'warn',
-    'key-spacing': 'off',
-    '@typescript-eslint/keyword-spacing': 'warn',
-    'keyword-spacing': 'off',
-    '@typescript-eslint/lines-around-comment': [
-      'warn',
-      {
-        allowBlockStart: true,
-      },
-    ],
-    'lines-around-comment': 'off',
-    '@typescript-eslint/lines-between-class-members': [
-      'warn',
-      'always',
-      {
-        exceptAfterSingleLine: true,
-      },
-    ],
-    'lines-between-class-members': 'off',
     '@typescript-eslint/max-params': 'off',
     'max-params': 'off',
-    '@typescript-eslint/member-delimiter-style': [
-      'warn',
-      {
-        multiline: { delimiter: 'semi', requireLast: true },
-        singleline: { delimiter: 'semi', requireLast: false },
-      },
-    ],
     '@typescript-eslint/member-ordering': [
       'warn',
       {
@@ -187,28 +129,9 @@ export default {
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
-    '@typescript-eslint/no-extra-parens': [
-      'warn',
-      'all',
-      {
-        returnAssign: false,
-        nestedBinaryExpressions: false,
-        enforceForSequenceExpressions: false,
-        ignoreJSX: 'multi-line',
-      },
-    ],
-    'no-extra-parens': 'off',
-    '@typescript-eslint/no-extra-semi': 'error',
-    'no-extra-semi': 'off',
     '@typescript-eslint/no-extraneous-class': 'off',
     '@typescript-eslint/no-floating-promises': 'error',
     '@typescript-eslint/no-for-in-array': 'error',
-    // '@typescript-eslint/no-implicit-any-catch': [
-    //   'off',
-    //   {
-    //     allowExplicitAny: true,
-    //   },
-    // ], // deprecated, TS1196
     '@typescript-eslint/no-implied-eval': 'error',
     'no-implied-eval': 'off',
     '@typescript-eslint/no-import-type-side-effects': 'off',
@@ -242,7 +165,6 @@ export default {
     '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'off',
     '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
-    // '@typescript-eslint/no-parameter-properties': 'off', // deprecated
     '@typescript-eslint/no-redeclare': 'error',
     'no-redeclare': 'off',
     '@typescript-eslint/no-redundant-type-constituents': 'off',
@@ -257,13 +179,10 @@ export default {
     'no-restricted-imports': 'off',
     '@typescript-eslint/no-shadow': 'off',
     '@typescript-eslint/no-this-alias': 'error', // !
-    '@typescript-eslint/no-throw-literal': 'error',
-    'no-throw-literal': 'off',
     '@typescript-eslint/no-type-alias': 'off',
     '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
     '@typescript-eslint/no-unnecessary-condition': 'off',
     '@typescript-eslint/no-unnecessary-qualifier': 'warn',
-    // '@typescript-eslint/no-unnecessary-template-expression': 'warn', // deprecated в v8
     '@typescript-eslint/no-unnecessary-type-arguments': 'warn',
     '@typescript-eslint/no-unnecessary-type-assertion': 'error', // !
     '@typescript-eslint/no-unnecessary-type-constraint': 'error',
@@ -294,63 +213,15 @@ export default {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-use-before-define': 'warn',
     'no-use-before-define': 'off',
-    '@typescript-eslint/no-duplicate-jsx-props': 'error', // Новое в v8
-    '@typescript-eslint/no-unsafe-function-type': 'off', // Новое в v8
+    '@typescript-eslint/no-unsafe-function-type': 'off',
     '@typescript-eslint/no-useless-constructor': 'off', // Incorrect working with emitDecoratorMetadata
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-empty-export': 'off', // In *.d.ts with declare global it needed
-    '@typescript-eslint/no-useless-template-literals': 'warn',
     '@typescript-eslint/no-var-requires': 'off', // !
-    // '@typescript-eslint/no-useless-template-literals': 'warn', // deprecated в v8
     '@typescript-eslint/non-nullable-type-assertion-style': 'error',
-    '@typescript-eslint/object-curly-spacing': ['warn', 'always'],
     '@typescript-eslint/only-throw-error': 'warn',
-    'object-curly-spacing': 'off',
-
-    'padding-line-between-statements': 'off',
-    '@typescript-eslint/padding-line-between-statements': [
-      'warn',
-      {
-        blankLine: 'always',
-        prev: 'block-like',
-        next: '*',
-      },
-      {
-        blankLine: 'always',
-        prev: '*',
-        next: [
-          'break',
-          'class',
-          'const',
-          'continue',
-          'do',
-          'for',
-          'function',
-          'if',
-          'interface',
-          'let',
-          'return',
-          'switch',
-          'throw',
-          'try',
-          'type',
-          'while',
-        ],
-      },
-      {
-        blankLine: 'any',
-        prev: ['const', 'let'],
-        next: ['const', 'let'],
-      },
-      {
-        blankLine: 'any',
-        prev: ['type'],
-        next: ['type'],
-      },
-    ],
     '@typescript-eslint/parameter-properties': 'off',
     '@typescript-eslint/prefer-as-const': 'error',
-    '@typescript-eslint/prefer-destructuring-enums': 'off', // Новое в v8
     '@typescript-eslint/prefer-enum-initializers': 'warn',
     '@typescript-eslint/prefer-find': 'error',
     '@typescript-eslint/prefer-for-of': 'error',
@@ -364,7 +235,6 @@ export default {
     'prefer-destructuring': 'off',
     '@typescript-eslint/prefer-includes': 'error',
     '@typescript-eslint/prefer-literal-enum-member': 'warn',
-    '@typescript-eslint/prefer-method-signature': 'off', // Новое в v8
     '@typescript-eslint/prefer-namespace-keyword': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/prefer-optional-chain': 'error',
@@ -378,14 +248,6 @@ export default {
     '@typescript-eslint/prefer-string-starts-ends-with': 'error',
     '@typescript-eslint/prefer-ts-expect-error': 'off',
     '@typescript-eslint/promise-function-async': 'off',
-    '@typescript-eslint/quotes': [
-      'error',
-      'single',
-      {
-        avoidEscape: true,
-        allowTemplateLiterals: true,
-      },
-    ],
     '@typescript-eslint/require-array-sort-compare': 'off',
     '@typescript-eslint/require-await': 'warn',
     'require-await': 'off',
@@ -397,27 +259,10 @@ export default {
     ],
     '@typescript-eslint/restrict-template-expressions': 'off',
     '@typescript-eslint/return-await': 'error',
-    '@typescript-eslint/semi': ['error', 'always'],
-    'semi': 'off',
     '@typescript-eslint/sort-type-constituents': 'off',
-    // '@typescript-eslint/sort-type-union-intersection-members': 'off', // deprecated
-    '@typescript-eslint/space-before-blocks': 'warn',
-    'space-before-blocks': 'off',
-    '@typescript-eslint/space-before-function-paren': [
-      'warn',
-      {
-        asyncArrow: 'always',
-        anonymous: 'always',
-        named: 'never',
-      },
-    ],
-    'space-before-function-paren': 'off',
-    '@typescript-eslint/space-infix-ops': 'warn',
-    'space-infix-ops': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/switch-exhaustiveness-check': 'warn',
     '@typescript-eslint/triple-slash-reference': 'error',
-    '@typescript-eslint/type-annotation-spacing': 'warn',
     '@typescript-eslint/typedef': [
       'warn',
       {
@@ -459,9 +304,14 @@ export default {
     '@typescript-eslint/no-deprecated': 'off',
     '@typescript-eslint/no-empty-object-type': 'off',
     '@typescript-eslint/no-misused-spread': 'off',
-    '@typescript-eslint/no-restricted-types': 'off',
+    '@typescript-eslint/no-restricted-types': [
+      'warn',
+      {
+        types: {},
+      },
+    ],
     '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'off',
-    '@typescript-eslint/no-unnecessary-template-expression': 'off',
+    '@typescript-eslint/no-unnecessary-template-expression': 'warn',
     '@typescript-eslint/no-unnecessary-type-conversion': 'off',
     '@typescript-eslint/no-unnecessary-type-parameters': 'off',
     '@typescript-eslint/no-unsafe-type-assertion': 'off',
@@ -476,5 +326,164 @@ export default {
     'no-unassigned-vars': 'off',
     'no-useless-assignment': 'off',
     'preserve-caught-error': 'off',
+
+    // removed
+    // '@typescript-eslint/no-implicit-any-catch': [
+    //   'off',
+    //   {
+    //     allowExplicitAny: true,
+    //   },
+    // ], // deprecated, TS1196
+    // '@typescript-eslint/no-duplicate-jsx-props': 'error', // removed in v8
+    // '@typescript-eslint/prefer-destructuring-enums': 'off', // removed in v8
+    // '@typescript-eslint/prefer-method-signature': 'off', // removed in v8
+
+    // renamed
+    // '@typescript-eslint/ban-types': [
+    //   'warn',
+    //   {
+    //     types: {},
+    //     extendDefaults: false,
+    //   },
+    // ], // removed in v8
+    // '@typescript-eslint/no-parameter-properties': 'off', // removed in v8
+    // '@typescript-eslint/no-useless-template-literals': 'warn', // removed in v8
+    // '@typescript-eslint/sort-type-union-intersection-members': 'off', // deprecated
+
+    // replaced by @stylistic/eslint-plugin
+    // '@typescript-eslint/block-spacing': ['warn', 'always'], // removed in v8
+    // 'block-spacing': 'off',
+    // '@typescript-eslint/brace-style': ['warn', '1tbs'], // removed in v8
+    // 'brace-style': 'off',
+    // '@typescript-eslint/comma-dangle': ['warn', 'always-multiline'], // removed in v8
+    // 'comma-dangle': 'off',
+    // '@typescript-eslint/comma-spacing': 'warn', // removed in v8
+    // 'comma-spacing': 'off',
+    // '@typescript-eslint/func-call-spacing': 'warn', // removed in v8
+    // 'func-call-spacing': 'off',
+    // '@typescript-eslint/indent': [
+    //   'warn',
+    //   2,
+    //   {
+    //     SwitchCase: 1,
+    //     FunctionDeclaration: { parameters: 'first' },
+    //     FunctionExpression: { parameters: 'first' },
+    //     ignoredNodes: [
+    //       'TSTypeParameterInstantiation',
+    //       'FunctionExpression > .params[decorators.length > 0]',
+    //       'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
+    //       'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key',
+    //     ],
+    //   },
+    // ], // removed in v8
+    // 'indent': 'off',
+    // '@typescript-eslint/key-spacing': 'warn', // removed in v8
+    // 'key-spacing': 'off',
+    // '@typescript-eslint/keyword-spacing': 'warn', // removed in v8
+    // 'keyword-spacing': 'off',
+    // '@typescript-eslint/lines-around-comment': [
+    //   'warn',
+    //   {
+    //     allowBlockStart: true,
+    //   },
+    // ], // removed in v8
+    // 'lines-around-comment': 'off',
+    // '@typescript-eslint/lines-between-class-members': [
+    //   'warn',
+    //   'always',
+    //   {
+    //     exceptAfterSingleLine: true,
+    //   },
+    // ], // removed in v8
+    // 'lines-between-class-members': 'off',
+    // '@typescript-eslint/member-delimiter-style': [
+    //   'warn',
+    //   {
+    //     multiline: { delimiter: 'semi', requireLast: true },
+    //     singleline: { delimiter: 'semi', requireLast: false },
+    //   },
+    // ], // removed in v8
+    // '@typescript-eslint/no-extra-parens': [
+    //   'warn',
+    //   'all',
+    //   {
+    //     returnAssign: false,
+    //     nestedBinaryExpressions: false,
+    //     enforceForSequenceExpressions: false,
+    //     ignoreJSX: 'multi-line',
+    //   },
+    // ], // removed in v8
+    // 'no-extra-parens': 'off',
+    // '@typescript-eslint/no-extra-semi': 'error', // removed in v8
+    // 'no-extra-semi': 'off',
+    // '@typescript-eslint/no-throw-literal': 'error', // removed in v8
+    // 'no-throw-literal': 'off',
+    // '@typescript-eslint/object-curly-spacing': ['warn', 'always'], // removed in v8
+    // 'object-curly-spacing': 'off',
+    // '@typescript-eslint/padding-line-between-statements': [
+    //   'warn',
+    //   {
+    //     blankLine: 'always',
+    //     prev: 'block-like',
+    //     next: '*',
+    //   },
+    //   {
+    //     blankLine: 'always',
+    //     prev: '*',
+    //     next: [
+    //       'break',
+    //       'class',
+    //       'const',
+    //       'continue',
+    //       'do',
+    //       'for',
+    //       'function',
+    //       'if',
+    //       'interface',
+    //       'let',
+    //       'return',
+    //       'switch',
+    //       'throw',
+    //       'try',
+    //       'type',
+    //       'while',
+    //     ],
+    //   },
+    //   {
+    //     blankLine: 'any',
+    //     prev: ['const', 'let'],
+    //     next: ['const', 'let'],
+    //   },
+    //   {
+    //     blankLine: 'any',
+    //     prev: ['type'],
+    //     next: ['type'],
+    //   },
+    // ], // removed in v8
+    // 'padding-line-between-statements': 'off',
+    // '@typescript-eslint/semi': ['error', 'always'], // removed in v8
+    // 'semi': 'off',
+    // '@typescript-eslint/space-before-blocks': 'warn',
+    // 'space-before-blocks': 'off',
+    // '@typescript-eslint/space-before-function-paren': [
+    //   'warn',
+    //   {
+    //     asyncArrow: 'always',
+    //     anonymous: 'always',
+    //     named: 'never',
+    //   },
+    // ],
+    // 'space-before-function-paren': 'off',
+    // '@typescript-eslint/space-infix-ops': 'warn',
+    // 'space-infix-ops': 'off',
+    // '@typescript-eslint/quotes': [
+    //   'error',
+    //   'single',
+    //   {
+    //     avoidEscape: true,
+    //     allowTemplateLiterals: true,
+    //   },
+    // ], // removed in v8
+    // '@typescript-eslint/type-annotation-spacing': 'warn', // removed in v8
   },
 } satisfies import('eslint').Linter.Config;
