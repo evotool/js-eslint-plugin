@@ -3,11 +3,12 @@
 import * as importPlugin from 'eslint-plugin-import';
 import * as lodashPlugin from 'eslint-plugin-lodash';
 import * as unusedImportsPlugin from 'eslint-plugin-unused-imports';
-import stylisticPlugin from '@stylistic/eslint-plugin';
+import * as stylisticPlugin from '@stylistic/eslint-plugin';
 
 export default {
   name: 'ecmascript',
   plugins: {
+    // @ts-ignore
     '@stylistic': stylisticPlugin,
     'import': importPlugin,
     'lodash': lodashPlugin,
@@ -295,7 +296,7 @@ export default {
       'single',
       {
         avoidEscape: true,
-        allowTemplateLiterals: true,
+        allowTemplateLiterals: 'avoidEscape',
       },
     ],
     '@stylistic/rest-spread-spacing': 'warn',

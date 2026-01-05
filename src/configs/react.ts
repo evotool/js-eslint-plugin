@@ -1,11 +1,12 @@
 /* eslint-disable */
 import * as reactPlugin from 'eslint-plugin-react';
 import * as reactHooksPlugin from 'eslint-plugin-react-hooks';
-import stylisticPlugin from '@stylistic/eslint-plugin';
+import * as stylisticPlugin from '@stylistic/eslint-plugin';
 
 export default {
   name: 'react',
   plugins: {
+    // @ts-ignore
     '@stylistic': stylisticPlugin,
     'react': reactPlugin,
     'react-hooks': reactHooksPlugin as any,
