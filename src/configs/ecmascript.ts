@@ -47,19 +47,29 @@ export default {
     'lodash/prefer-flat-map': 'warn',
     'lodash/prefer-get': ['warn', 3],
     'lodash/prefer-immutable-method': 'warn',
-    'lodash/prefer-includes': ['warn', { 'includeNative': true }],
+    'lodash/prefer-includes': [
+      'warn',
+      {
+        'includeNative': true,
+      },
+    ],
     'lodash/prefer-invoke-map': 'warn',
     'lodash/prefer-is-nil': 'warn',
     'lodash/prefer-lodash-chain': 'warn',
     'lodash/prefer-lodash-method': 'off',
     'lodash/prefer-lodash-typecheck': 'warn',
     'lodash/prefer-map': 'warn',
-    'lodash/prefer-matches': ['warn', 3],
+    'lodash/prefer-matches': ['off', 3], // !
     'lodash/prefer-noop': 'off',
     'lodash/prefer-over-quantifier': 'warn',
     'lodash/prefer-reject': ['warn', 3],
-    'lodash/prefer-some': ['warn', { 'includeNative': true }],
-    'lodash/prefer-startswith': 'warn',
+    'lodash/prefer-some': [
+      'warn',
+      {
+        'includeNative': true,
+      },
+    ],
+    'lodash/prefer-startswith': 'off', // !
     'lodash/prefer-thru': 'warn',
     'lodash/prefer-times': 'warn',
     'lodash/prefer-wrapper-method': 'warn',
@@ -72,6 +82,7 @@ export default {
     'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
     'import/default': 'error',
     'import/dynamic-import-chunkname': 'off',
+    'import/enforce-node-protocol-usage': 'error',
     'import/export': 'error',
     'import/exports-last': 'off',
     'import/extensions': 'off', // !
@@ -192,8 +203,14 @@ export default {
     '@stylistic/member-delimiter-style': [
       'warn',
       {
-        multiline: { delimiter: 'semi', requireLast: true },
-        singleline: { delimiter: 'semi', requireLast: false },
+        multiline: {
+          delimiter: 'semi',
+          requireLast: true,
+        },
+        singleline: {
+          delimiter: 'semi',
+          requireLast: false,
+        },
       },
     ],
     '@stylistic/multiline-comment-style': 'off',
@@ -213,7 +230,19 @@ export default {
     ],
     '@stylistic/no-extra-semi': 'error',
     '@stylistic/no-floating-decimal': 'warn',
-    '@stylistic/no-mixed-operators': 'warn',
+    '@stylistic/no-mixed-operators': [
+      'off',
+      {
+        'groups': [
+          ['+', '-', '*', '/', '%', '**'],
+          ['&', '|', '^', '~', '<<', '>>', '>>>'],
+          ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
+          ['&&', '||'],
+          ['in', 'instanceof'],
+        ],
+        'allowSamePrecedence': true,
+      },
+    ],
     '@stylistic/no-mixed-spaces-and-tabs': 'error',
     '@stylistic/no-multi-spaces': 'warn',
     '@stylistic/no-multiple-empty-lines': [
@@ -342,7 +371,12 @@ export default {
     ],
     'arrow-body-style': 'warn',
     'block-scoped-var': 'warn',
-    'camelcase': ['off', { properties: 'never' }],
+    'camelcase': [
+      'off',
+      {
+        properties: 'never',
+      },
+    ],
     'capitalized-comments': 'off',
     'class-methods-use-this': 'off',
     'complexity': 'off',
@@ -372,7 +406,13 @@ export default {
         ignoreForLoopInit: true,
       },
     ],
-    'logical-assignment-operators': ['warn', 'always', { enforceForIfStatements: true }],
+    'logical-assignment-operators': [
+      'warn',
+      'always',
+      {
+        enforceForIfStatements: true,
+      },
+    ],
     'max-classes-per-file': 'off',
     'max-depth': 'off',
     'max-lines-per-function': 'off',
@@ -407,7 +447,12 @@ export default {
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
     'no-duplicate-imports': 'error',
-    'no-else-return': ['warn', { allowElseIf: false }],
+    'no-else-return': [
+      'warn',
+      {
+        allowElseIf: false,
+      },
+    ],
     'no-empty-character-class': 'error',
     'no-empty-function': 'off',
     'no-empty-pattern': 'error',
@@ -500,7 +545,7 @@ export default {
     'no-unneeded-ternary': 'error',
     'no-unreachable-loop': 'warn',
     'no-unreachable': 'error',
-    'no-unused-private-class-members': 'error',
+    'no-unused-private-class-members': 'warn',
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
     'no-unsafe-optional-chaining': 'error',
@@ -536,7 +581,14 @@ export default {
     'no-warning-comments': 'off',
     'no-with': 'error',
     'object-shorthand': 'error',
-    'one-var': ['off', { var: 'never', let: 'never', const: 'never' }],
+    'one-var': [
+      'off',
+      {
+        var: 'never',
+        let: 'never',
+        const: 'never',
+      },
+    ],
     'operator-assignment': 'warn',
     'prefer-arrow-callback': 'warn',
     'prefer-const': [
@@ -548,7 +600,10 @@ export default {
     'prefer-destructuring': [
       'error',
       {
-        AssignmentExpression: { array: false, object: false },
+        AssignmentExpression: {
+          array: false,
+          object: false,
+        },
       },
     ],
     'prefer-exponentiation-operator': 'error',

@@ -29,7 +29,7 @@ export default {
   rules: {
     'unused-imports/no-unused-imports': 'warn',
     'unused-imports/no-unused-vars': [
-      'warn',
+      'off',
       {
         args: 'none',
         caughtErrors: 'none',
@@ -42,7 +42,7 @@ export default {
 
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': 'error',
-    '@typescript-eslint/await-thenable': 'error',
+    '@typescript-eslint/await-thenable': 'off', // conflict in Promise.all([...])
     '@typescript-eslint/ban-tslint-comment': 'warn',
     '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': false }],
     '@typescript-eslint/class-literal-property-style': 'warn',
@@ -117,12 +117,37 @@ export default {
     '@typescript-eslint/no-base-to-string': 'warn',
     '@typescript-eslint/no-confusing-non-null-assertion': 'warn',
     '@typescript-eslint/no-confusing-void-expression': 'off',
+    '@typescript-eslint/no-deprecated': 'warn',
     '@typescript-eslint/no-dupe-class-members': 'error',
     'no-dupe-class-members': 'off',
     '@typescript-eslint/no-duplicate-enum-values': 'warn',
     '@typescript-eslint/no-duplicate-type-constituents': 'warn',
     '@typescript-eslint/no-dynamic-delete': 'off',
     '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-empty-object-type': [
+      'warn',
+      {
+        allowInterfaces: 'always',
+        allowObjectTypes: 'always',
+      },
+    ],
+    '@typescript-eslint/no-misused-spread': 'warn',
+    '@typescript-eslint/no-restricted-types': [
+      'warn',
+      {
+        types: {},
+      },
+    ],
+    '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'error',
+    '@typescript-eslint/no-unnecessary-template-expression': 'warn',
+    '@typescript-eslint/no-unnecessary-type-conversion': 'error',
+    '@typescript-eslint/no-unnecessary-type-parameters': 'off',
+    '@typescript-eslint/no-unsafe-type-assertion': 'off',
+    '@typescript-eslint/no-unused-private-class-members': 'warn',
+    'no-unused-private-class-members': 'off',
+    '@typescript-eslint/no-useless-default-assignment': 'error',
+    '@typescript-eslint/no-wrapper-object-types': 'error',
+    '@typescript-eslint/related-getter-setter-pairs': 'error',
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
@@ -259,7 +284,12 @@ export default {
     '@typescript-eslint/return-await': 'error',
     '@typescript-eslint/sort-type-constituents': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
-    '@typescript-eslint/switch-exhaustiveness-check': 'warn',
+    '@typescript-eslint/switch-exhaustiveness-check': [
+      'warn',
+      {
+        considerDefaultExhaustiveForUnions: true,
+      },
+    ],
     '@typescript-eslint/triple-slash-reference': 'error',
     '@typescript-eslint/typedef': [
       'warn',
@@ -281,49 +311,18 @@ export default {
     'no-const-assign': 'off',
     'no-dupe-args': 'off',
     'no-dupe-keys': 'off',
+    'no-duplicate-imports': 'off',
     'no-func-assign': 'off',
     'no-import-assign': 'off',
-    'no-new-symbol': 'off',
     'no-obj-calls': 'off',
     'no-prototype-builtins': 'off',
-    'no-return-await': 'off',
     'no-setter-return': 'off',
     'no-this-before-super': 'off',
-    'no-undef': 'off',
+    'no-unassigned-vars': 'off',
     'no-unreachable': 'off',
     'no-unsafe-negation': 'off',
-    'no-var': 'error',
-    'prefer-const': 'error',
-    'prefer-rest-params': 'error',
-    'prefer-spread': 'error',
-    'valid-typeof': 'off', // ts(2367)
-
-    // new rules
-    '@typescript-eslint/no-deprecated': 'off',
-    '@typescript-eslint/no-empty-object-type': 'off',
-    '@typescript-eslint/no-misused-spread': 'off',
-    '@typescript-eslint/no-restricted-types': [
-      'warn',
-      {
-        types: {},
-      },
-    ],
-    '@typescript-eslint/no-unnecessary-parameter-property-assignment': 'off',
-    '@typescript-eslint/no-unnecessary-template-expression': 'warn',
-    '@typescript-eslint/no-unnecessary-type-conversion': 'off',
-    '@typescript-eslint/no-unnecessary-type-parameters': 'off',
-    '@typescript-eslint/no-unsafe-type-assertion': 'off',
-    '@typescript-eslint/no-unused-private-class-members': 'off',
-    '@typescript-eslint/no-useless-default-assignment': 'off',
-    '@typescript-eslint/no-wrapper-object-types': 'off',
-    '@typescript-eslint/related-getter-setter-pairs': 'off',
-
-    'import/enforce-node-protocol-usage': 'off',
-
-    'no-duplicate-imports': 'off',
-    'no-unassigned-vars': 'off',
     'no-useless-assignment': 'off',
-    'preserve-caught-error': 'off',
+    'valid-typeof': 'off', // ts(2367)
 
     // removed
     // '@typescript-eslint/no-implicit-any-catch': [
