@@ -82,7 +82,7 @@ export default {
     'import/consistent-type-specifier-style': ['warn', 'prefer-inline'],
     'import/default': 'error',
     'import/dynamic-import-chunkname': 'off',
-    'import/enforce-node-protocol-usage': 'error',
+    'import/enforce-node-protocol-usage': ['error', 'always'],
     'import/export': 'error',
     'import/exports-last': 'off',
     'import/extensions': 'off', // !
