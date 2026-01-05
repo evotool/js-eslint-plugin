@@ -24,9 +24,7 @@ export default {
     },
   },
   settings: {
-    'import/resolver': {
-      typescript: true,
-    },
+    ...importPlugin.flatConfigs.typescript.settings,
   },
   rules: {
     'unused-imports/no-unused-imports': 'warn',
