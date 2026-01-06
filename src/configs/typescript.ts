@@ -131,7 +131,7 @@ export default {
         allowObjectTypes: 'always',
       },
     ],
-    '@typescript-eslint/no-misused-spread': 'warn',
+    '@typescript-eslint/no-misused-spread': 'off',
     '@typescript-eslint/no-restricted-types': [
       'warn',
       {
