@@ -1,6 +1,6 @@
 {
   "name": "@evojs/eslint-plugin",
-  "version": "8.0.10",
+  "version": "8.0.11",
   "description": "Plugin for eslint",
   "main": "index.js",
   "license": "MIT",
@@ -13,15 +13,15 @@
     "release": "npm publish --access public dist/"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin": "^5.6.1",
+    "@stylistic/eslint-plugin": "^5.7.0",
     "eslint-plugin-import": "~2.32.0",
     "eslint-plugin-lodash": "~8.0.0",
     "eslint-plugin-unused-imports": "~4.3.0"
   },
   "devDependencies": {
-    "@types/node": "^24.10.4",
-    "@typescript-eslint/eslint-plugin": "~8.52.0",
-    "@typescript-eslint/parser": "~8.52.0",
+    "@types/node": "^24.10.7",
+    "@typescript-eslint/eslint-plugin": "~8.53.0",
+    "@typescript-eslint/parser": "~8.53.0",
     "chalk": "^4.1.2",
     "eslint": "~9.39.2",
     "eslint-plugin-react": "^7.37.5",

@@ -12,9 +12,6 @@ export default {
     'react-hooks': reactHooksPlugin as any,
   },
   languageOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    parser: '@typescript-eslint/parser',
     parserOptions: {
       ecmaFeatures: {
         jsx: true,
