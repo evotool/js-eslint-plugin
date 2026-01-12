@@ -284,6 +284,7 @@ export default {
     '@typescript-eslint/return-await': 'error',
     '@typescript-eslint/sort-type-constituents': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/strict-void-return': 'off',
     '@typescript-eslint/switch-exhaustiveness-check': [
       'warn',
       {
